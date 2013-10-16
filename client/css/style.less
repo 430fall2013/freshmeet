@@ -19,6 +19,19 @@ a {
 a:hover {
 	color:@orange;
 }
+input {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	display:block;
+	margin:5px 0 10px 0;
+	padding:5px;
+	border:3px solid @grey;
+	width:100%;
+}
+#radio1, #radio2, #radio3 {
+	display:inline;
+	margin-bottom:15px;
+}
 .container {
 	border:5px solid @grey;
 	background-color:white;
@@ -74,6 +87,14 @@ a:hover {
 		padding:15px;
 		box-sizing:border-box;
 		-moz-box-sizing:border-box;
+		.register-form {
+			padding-top:39px;
+		}
+		.register-info {
+			li {
+				margin-left:20px;
+			}
+		}
 	}
 	.home {
 		.intro-desc {
@@ -82,7 +103,7 @@ a:hover {
 			-moz-box-sizing:border-box;
 		}
 	}
-	.join-now {
+	button {
 		-moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
 		-webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
 		box-shadow:inset 0px 1px 0px 0px #97c4fe;
@@ -114,13 +135,13 @@ a:hover {
 		text-align:center;
 		text-shadow:1px 1px 0px #1570cd;
 	}
-	.join-now:hover {
+	button:hover {
 		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6) );
 		background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
 		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
 		background-color:#1e62d0;
 		cursor:pointer;
-	}.join-now:active {
+	}button:active {
 		position:relative;
 		top:1px;
 	}
