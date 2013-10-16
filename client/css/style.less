@@ -1,0 +1,183 @@
+@blue: #55a1ee;
+@orange: #ff6600;
+@red: #ee0000;
+@grey: #cccccc;
+@darkGrey: #999999;
+
+html, body {
+	background-image:url('/images/light_bg.png');
+	.droid();
+	padding:15px 0 15px 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	.oswald();
+}
+a {
+	color:@blue;
+	text-decoration:none;
+}
+a:hover {
+	color:@orange;
+}
+.container {
+	border:5px solid @grey;
+	background-color:white;
+	margin:0 auto;
+	width:100%;
+	max-width:960px;
+	.header {
+		background-color:@grey;
+	}
+	.nav {
+		background-color:@grey;
+		.directory {
+			li {
+				display:inline;
+				padding-right:10px;
+				a {
+					color:black;
+					.oswald(normal, 24px, 40px);
+					padding:5px;
+				}
+				a:hover {
+					color:@blue;
+				}
+				.active {
+					background-color:white;
+					color:@blue;
+				}
+			}
+		}
+		.controls {
+			text-align:right;
+			li {
+				display:inline;
+				padding-left:10px;
+				a {
+					color:@darkGrey;
+					.oswald(normal, 20px, 40px);
+					padding:5px;
+				}
+				a:hover {
+					color:@blue;
+				}
+				.active {
+					background-color:white;
+					color:@blue;
+				}
+			}
+		}
+	}
+	.errors {
+
+	}
+	.intro {
+		padding:15px;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;
+	}
+	.home {
+		padding:15px;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		.intro-desc {
+			text-align:center;
+			box-sizing:border-box;
+			-moz-box-sizing:border-box;
+		}
+	}
+	.about {
+		padding:15px;
+	}
+	.contact {
+		padding:15px;
+	}
+	.register {
+		padding:15px;
+	}
+	.join-row {
+		padding:15px;
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;
+	}
+	.join-now {
+		-moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+		-webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+		box-shadow:inset 0px 1px 0px 0px #97c4fe;
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0) );
+		background:-moz-linear-gradient( center top, #3d94f6 5%, #1e62d0 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0');
+		background-color:#3d94f6;
+		-webkit-border-top-left-radius:0px;
+		-moz-border-radius-topleft:0px;
+		border-top-left-radius:0px;
+		-webkit-border-top-right-radius:0px;
+		-moz-border-radius-topright:0px;
+		border-top-right-radius:0px;
+		-webkit-border-bottom-right-radius:0px;
+		-moz-border-radius-bottomright:0px;
+		border-bottom-right-radius:0px;
+		-webkit-border-bottom-left-radius:0px;
+		-moz-border-radius-bottomleft:0px;
+		border-bottom-left-radius:0px;
+		text-indent:0;
+		border:1px solid #337fed;
+		display:inline-block;
+		color:#ffffff;
+		.droid();
+		height:40px;
+		line-height:40px;
+		width:100%;
+		text-decoration:none;
+		text-align:center;
+		text-shadow:1px 1px 0px #1570cd;
+	}
+	.join-now:hover {
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6) );
+		background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
+		background-color:#1e62d0;
+		cursor:pointer;
+	}.join-now:active {
+		position:relative;
+		top:1px;
+	}
+	.footer {
+		background-color:@grey;
+		text-align:center;
+		padding-top:2px;
+	}
+}
+
+@font-face {
+    font-family: 'droid_serifregular';
+    src: url('/fonts/droid-webfont.eot');
+    src: url('/fonts/droid-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/droid-webfont.woff') format('woff'),
+         url('/fonts/droid-webfont.ttf') format('truetype'),
+         url('/fonts/droid-webfont.svg#droid_serifregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'oswaldregular';
+    src: url('/fonts/oswald-webfont.eot');
+    src: url('/fonts/oswald-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/oswald-webfont.woff') format('woff'),
+         url('/fonts/oswald-webfont.ttf') format('truetype'),
+         url('/fonts/oswald-webfont.svg#oswaldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.droid(@weight:normal, @size:18px, @lineHeight:24px) {
+    font-family:'droid_serifregular';
+    font-weight:@weight;
+    font-size:@size;
+    line-height:@lineHeight;
+}
+.oswald(@weight:normal, @size:30px, @lineHeight:40px) {
+    font-family:'oswaldregular';
+    font-weight:@weight;
+    font-size:@size;
+    line-height:@lineHeight;
+}

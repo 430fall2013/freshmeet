@@ -1,0 +1,49 @@
+<template name="layout">
+<head>
+	<title>myInstaCollegeConnectBook</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row header">
+			{{> header}}
+		</div>
+		<div class="row nav">
+			{{> nav}}
+		</div>
+		<div class="row errors">
+			{{> errors}}
+		</div>
+		<div class="row main">
+			{{yield}}
+		</div>
+		<div class="row footer">
+			{{> footer}}
+		</div>
+	</div>
+</body>
+</template>
+
+<template name="header">
+	<div class="twelvecol">
+		<a href="{{pathFor 'home'}}"><img src="/images/FM_banner.jpg" alt="Banner"/></a>
+	</div>
+</template>
+
+<template name="nav">
+	<ul class="directory eightcol">
+		<li><a href="{{pathFor 'home'}}">Home</a></li>
+		<li><a href="{{pathFor 'about'}}">About</a></li>
+		<li><a href="{{pathFor 'contact'}}">Contact</a></li>
+	</ul>
+	<ul class="controls fourcol last">
+		<li><a href="{{pathFor 'register'}}">Register</a></li>
+		<li><a href="#">Login</a></li>
+	</ul>
+</template>
+
+<template name="errors">
+</template>
+
+<template name="footer">
+	<span class="twelvecol">Fresh Meet &copy; 2013</span>
+</template>
