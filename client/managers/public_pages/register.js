@@ -139,7 +139,7 @@ Template.registerForm.events({
 				}
 				else {
 					console.log('Success');
-					Meteor.go('home');
+					Router.go('home');
 				}
 			});
 		}

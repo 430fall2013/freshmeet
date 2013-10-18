@@ -38,6 +38,9 @@
 	<ul class="controls fourcol last">
 		<li><a href="{{pathFor 'register'}}">Register</a></li>
 		<li><a href="#">Login</a></li>
+		{{#if isLoggedIn}}
+			<li><a href="{{pathFor 'profile' _id=profileId}}">Profile</a></li>
+		{{/if}}
 	</ul>
 </template>
 

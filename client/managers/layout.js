@@ -16,3 +16,14 @@ Template.nav.rendered = function() {
 		$('.nav li a:contains("Home")').addClass('active');
 	}
 }
+Template.nav.helpers({
+	profileId: function() {
+		if (Meteor.user()) {
+			return Meteor.user()._id;
+		}
+	},	
+	isLoggedIn: function() {
+		if (Meteor.user()) return true;
+		else return false;
+	}
+});
