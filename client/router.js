@@ -5,4 +5,5 @@ Router.map(function() {
 	this.route('about');
 	this.route('register');
 	this.route('contact');
+	this.route('profile');
 });

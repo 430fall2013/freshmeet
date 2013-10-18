@@ -3,6 +3,9 @@ Template.nav.rendered = function() {
 	if (path == '/register') {
 		$('.nav li a:contains("Register")').addClass('active');
 	}
+	else if (path == '/profile') {
+		$('.nav li a:contains("Profile")').addClass('active');
+	}
 	else if (path == '/login') {
 		$('.nav li a:contains("Login")').addClass('active');
 	}
