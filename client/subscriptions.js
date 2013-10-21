@@ -1,0 +1,1 @@
+usersHandle = Meteor.subscribe('users');

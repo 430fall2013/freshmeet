@@ -5,5 +5,10 @@ Router.map(function() {
 	this.route('about');
 	this.route('register');
 	this.route('contact');
-	this.route('profile');
+	this.route('profiletemp');
+	this.route('profile', {
+		path: '/profile/:_id',
+		data: function() {return Meteor.users.findOne(this.params._id);},
+		waitOn: function() {return usersHandle;}	
+	});
 });

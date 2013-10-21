@@ -15,7 +15,21 @@ Template.nav.rendered = function() {
 	else if (path == '/contact') {
 		$('.nav li a:contains("Contact")').addClass('active');
 	}
+	else if (path == '/profiletemp') {
+		$('.nav li a:contains("ProfileTemp")').addClass('active');
+	}
 	else {
 		$('.nav li a:contains("Home")').addClass('active');
 	}
 }
+Template.nav.helpers({
+	profileId: function() {
+		if (Meteor.user()) {
+			return Meteor.user()._id;
+		}
+	},	
+	isLoggedIn: function() {
+		if (Meteor.user()) return true;
+		else return false;
+	}
+});

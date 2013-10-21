@@ -34,10 +34,14 @@
 		<li><a href="{{pathFor 'home'}}">Home</a></li>
 		<li><a href="{{pathFor 'about'}}">About</a></li>
 		<li><a href="{{pathFor 'contact'}}">Contact</a></li>
+		<li><a href="{{pathFor 'profiletemp'}}">ProfileTemp</a></li>
 	</ul>
 	<ul class="controls fourcol last">
 		<li><a href="{{pathFor 'register'}}">Register</a></li>
 		<li><a href="#">Login</a></li>
+		{{#if isLoggedIn}}
+			<li><a href="{{pathFor 'profile' _id=profileId}}">Profile</a></li>
+		{{/if}}
 	</ul>
 </template>
 
