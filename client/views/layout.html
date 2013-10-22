@@ -1,26 +1,26 @@
 <template name="layout">
-<head>
-	<title>freshmeet</title>
-</head>
-<body>
-	<div class="container">
-		<div class="row header">
-			{{> header}}
+	<head>
+		<title>freshmeet</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row header">
+				{{> header}}
+			</div>
+			<div class="row nav">
+				{{> nav}}
+			</div>
+			<div class="row errors">
+				{{> errors}}
+			</div>
+			<div class="row main">
+				{{yield}}
+			</div>
+			<div class="row footer">
+				{{> footer}}
+			</div>
 		</div>
-		<div class="row nav">
-			{{> nav}}
-		</div>
-		<div class="row errors">
-			{{> errors}}
-		</div>
-		<div class="row main">
-			{{yield}}
-		</div>
-		<div class="row footer">
-			{{> footer}}
-		</div>
-	</div>
-</body>
+	</body>
 </template>
 
 <template name="header">
@@ -30,13 +30,16 @@
 </template>
 
 <template name="nav">
-	<ul class="directory eightcol">
+	<ul class="directory ninecol">
 		<li><a href="{{pathFor 'home'}}">Home</a></li>
 		<li><a href="{{pathFor 'about'}}">About</a></li>
 		<li><a href="{{pathFor 'contact'}}">Contact</a></li>
-		<li><a href="{{pathFor 'profiletemp'}}">ProfileTemp</a></li>
+		<li><a href="{{pathFor 'profilestudent'}}">Student</a></li>
+		<li><a href="{{pathFor 'profileschool'}}">School</a></li>
+		<li><a href="{{pathFor 'profilerecruiter'}}">Recruiter</a></li>
+		<li><a href="{{pathFor 'profilecompany'}}">Company</a></li>
 	</ul>
-	<ul class="controls fourcol last">
+	<ul class="controls threecol last">
 		<li><a href="{{pathFor 'register'}}">Register</a></li>
 		<li><a href="#">Login</a></li>
 		{{#if isLoggedIn}}

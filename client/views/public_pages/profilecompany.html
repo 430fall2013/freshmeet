@@ -1,0 +1,79 @@
+<template name="profilecompany">
+	<div class="twelvecol">
+		{{> company}}
+	</div>
+</template>
+
+<template name="company">
+	<div class="twelvecol">
+		<div class="fourcol">
+			<img src="/images/tesla.png">
+		</div>
+		<div class="eightcol last">
+			<h1>Tesla Motors, Inc.</h1>
+			<p><strong>Industry:</strong> Automotive</p>
+			<p><strong>Headquarters:</strong> Palo Alto, California</p>
+		</div>
+	</div>
+
+
+	<div class="row join-row" align="center">
+		<div class="twocol">
+		</div>
+		<div class="twocol">
+			<button class="join-now about-button">About</button></a>
+		</div>
+		<div class="twocol">
+			<button class="join-now job-button">Jobs</button></a>
+		</div>
+		<div class="twocol">
+			<button class="join-now internship-button">Internships</button></a>
+		</div>
+		<div class="twocol">
+			<button class="join-now recruiter-button">Recruiters</button></a>
+		</div>
+		<div class="twocol last">
+		</div>
+
+	</div>
+
+	<!--display main content -->
+
+    {{#if isAbout}}
+        {{> aboutSection}}
+    {{/if}}
+    {{#if isJob}}
+        {{> jobSection}}
+    {{/if}}
+    {{#if isInternship}}
+        {{> internshipSection}}
+    {{/if}}
+    {{#if isRecruiter}}
+        {{> recruiterSection}}
+    {{/if}}
+
+</template>
+
+<template name="aboutSection">
+	<div class="twelvecol">
+		<h1>about</h1>
+	</div>
+</template>
+
+<template name="jobSection">
+	<div class="twelvecol">
+		<h1>job</h1>
+	</div>
+</template>
+
+<template name="internshipSection">
+	<div class="twelvecol">
+		<h1>internship</h1>
+	</div>
+</template>
+
+<template name="recruiterSection">
+	<div class="twelvecol">
+		<h1>recruiter</h1>
+	</div>
+</template>

@@ -15,8 +15,17 @@ Template.nav.rendered = function() {
 	else if (path == '/contact') {
 		$('.nav li a:contains("Contact")').addClass('active');
 	}
-	else if (path == '/profiletemp') {
-		$('.nav li a:contains("ProfileTemp")').addClass('active');
+	else if (path == '/profilestudent') {
+		$('.nav li a:contains("Student")').addClass('active');
+	}
+	else if (path == '/profileschool') {
+		$('.nav li a:contains("School")').addClass('active');
+	}
+	else if (path == '/profilerecruiter') {
+		$('.nav li a:contains("Recruiter")').addClass('active');
+	}
+	else if (path == '/profilecompany') {
+		$('.nav li a:contains("Company")').addClass('active');
 	}
 	else {
 		$('.nav li a:contains("Home")').addClass('active');
