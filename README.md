@@ -1,4 +1,3 @@
-	test commit words
 
 	-client                   #Code that will run on the client
 		-css                  #CSS
