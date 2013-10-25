@@ -3,6 +3,9 @@ Template.nav.rendered = function() {
 	if (path == '/register') {
 		$('.nav li a:contains("Register")').addClass('active');
 	}
+	else if (path == '/profile') {
+		$('.nav li a:contains("Profile")').addClass('active');
+	}
 	else if (path == '/login') {
 		$('.nav li a:contains("Login")').addClass('active');
 	}
@@ -14,6 +17,18 @@ Template.nav.rendered = function() {
 	}
 	else if (path.split('/')[1] == 'profile') {
 		$('.nav li a:contains("Profile")').addClass('active');
+	}
+	else if (path == '/profilestudent') {
+		$('.nav li a:contains("Student")').addClass('active');
+	}
+	else if (path == '/profileschool') {
+		$('.nav li a:contains("School")').addClass('active');
+	}
+	else if (path == '/profilerecruiter') {
+		$('.nav li a:contains("Recruiter")').addClass('active');
+	}
+	else if (path == '/profilecompany') {
+		$('.nav li a:contains("Company")').addClass('active');
 	}
 	else {
 		$('.nav li a:contains("Home")').addClass('active');

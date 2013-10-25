@@ -9,6 +9,10 @@ Router.map(function() {
 	this.route('register');
 	this.route('login');
 	this.route('contact');
+	this.route('profilestudent');
+	this.route('profileschool');
+	this.route('profilerecruiter');
+	this.route('profilecompany');
 	this.route('profile', {
 		path: '/profile/:_id',
 		data: function() {return Meteor.users.findOne(this.params._id);},

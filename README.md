@@ -1,3 +1,4 @@
+
 	-client                   #Code that will run on the client
 		-css                  #CSS
 		-managers             #javascript code that goes with the templates
@@ -84,3 +85,5 @@
 		Schools could look like the company model.
 		What will we call users who sign up to manage the schools?
 	*/
+
+
