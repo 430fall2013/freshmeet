@@ -42,21 +42,21 @@ Template.register.events({
 		Session.set('isSchool', false);
 		Session.set('isEmployer', false);
 	},
-	'click #register': function(e) {
-		e.preventDefault();
+	// 'click .submit': function(e) {
+	// 	e.preventDefault();
 
-		var fname = $('#fname').val();
-		var lname = $('#lname').val();
-		var email = $('#email').val();
-		var password = $('#password').val();
-		var confirm = $('#confirm').val();
+	// 	var fname = $('#fname').val();
+	// 	var lname = $('#lname').val();
+	// 	var email = $('#email').val();
+	// 	var password = $('#password').val();
+	// 	var confirm = $('#confirm').val();
 
-		console.log(fname, lname, email, password, confirm);
-		if (password != confirm)
-		{
-			console.log('they dont match');
-		}
-	},
+	// 	console.log(fname, lname, email, password, confirm);
+	// 	if (password != confirm)
+	// 	{
+	// 		console.log('they dont match');
+	// 	}
+	// },
 	'keypress #confirm': function(e) {
 		// FIX THIS
 		// 
@@ -117,14 +117,37 @@ Template.registerForm.events({
 		var confirm = $('#confirm').val();
 		var emailRegEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 		var type = Session.get('registerType');
+		var errorFlag = false;
 
+		if (!fname) {
+			throwError('No first name entered.');
+			errorFlag = true;
+		}
+		if (!lname) {
+			throwError('No last name entered.');
+			errorFlag = true;
+		}
+		if (!email) {
+			throwError('No email entered.');
+			errorFlag = true;
+		}
+		if (!password) {
+			throwError('No password entered.');
+			errorFlag = true;
+		}
+		if (!confirm) {
+			throwError('No confirmation entered.');
+			errorFlag = true;
+		}
 		if (!email.match(emailRegEx)) {
-			//throwError('Email is invalid.');
+			throwError('Email is invalid.');
+			errorFlag = true;
 		}
-		else if (password != confirm) {
-			//throwError('Passwords don't match.');
+		if (password != confirm) {
+			throwError('Passwords don\'t match.');
+			errorFlag = true;
 		}
-		else {
+		if (!errorFlag) {
 			Accounts.createUser({
 				email: email,
 				password: password,
@@ -135,7 +158,7 @@ Template.registerForm.events({
 				}
 			}, function (error) {
 				if (error) {
-					//throwError('Error creating account.');
+					throwError('Error creating account.');
 				}
 				else {
 					console.log('Success');

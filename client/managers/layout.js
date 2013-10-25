@@ -12,6 +12,9 @@ Template.nav.rendered = function() {
 	else if (path == '/contact') {
 		$('.nav li a:contains("Contact")').addClass('active');
 	}
+	else if (path.split('/')[1] == 'profile') {
+		$('.nav li a:contains("Profile")').addClass('active');
+	}
 	else {
 		$('.nav li a:contains("Home")').addClass('active');
 	}
@@ -25,5 +28,13 @@ Template.nav.helpers({
 	isLoggedIn: function() {
 		if (Meteor.user()) return true;
 		else return false;
+	}
+});
+
+Template.nav.events({
+	'click .logout-link': function(e) {
+		e.preventDefault();
+		Meteor.logout();
+		Router.go('home');
 	}
 });

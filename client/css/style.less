@@ -12,6 +12,12 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
 	.oswald();
 }
+h2 {
+	font-size:26px;
+}
+h3 {
+	font-size:22px;
+}
 a {
 	color:@blue;
 	text-decoration:none;
@@ -31,6 +37,9 @@ input {
 #radio1, #radio2, #radio3 {
 	display:inline;
 	margin-bottom:15px;
+}
+li {
+	list-style:none;
 }
 .container {
 	border:5px solid @grey;
@@ -81,7 +90,15 @@ input {
 			}
 		}
 	}
-	.errors {
+	.error {
+		box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		padding:5px;
+		background-color:white;
+		margin:15px;
+		border:5px solid @grey;
+		color:@red;
+		.oswald(normal, 20px, 30px);
 	}
 	.main {
 		padding:15px;
@@ -93,6 +110,35 @@ input {
 		.register-info {
 			li {
 				margin-left:20px;
+			}
+		}
+		.profile {
+			.resume {
+				border:5px solid @grey;
+				background-color:white;
+				margin-top:20px;
+				.resume-nav {
+					background-color:@grey;
+					li {
+						margin-right:15px;
+						display:inline;
+						.oswald(normal, 20px, 36px);
+						a {
+							padding:5px;
+							color:black;
+						}
+						a:hover {
+							color:@orange;
+						}
+						.active {
+							background-color:white;
+							color:@orange;
+						}
+					}
+				}
+				.resume-section {
+					padding:15px;
+				}
 			}
 		}
 	}

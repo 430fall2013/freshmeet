@@ -1,4 +1,4 @@
-<template name="profile">
+<template name="edit">
 	<div class="profile">
 		<div class="info row">
 			<div class="fourcol image">
@@ -7,9 +7,10 @@
 			<div class="eightcol last">
 				<h3>Welcome {{emails/0/address}}!</h3>
 				<ul>
-					<li>{{profile/fname}} {{profile/lname}}</li>
-					<li>California State University, Chico</li>
-					<li>Computer Science, May 2016</li>
+					<li><input type="text" placeholder="first name"> <input type="text" placeholder="last name"></li>
+					<li><input type="text" placeholder="school"></li>
+					<li><input type="text" placeholder="major"></li>
+					<li><input type="text" placeholder="graduation year"></li>
 				</ul>
 			</div>
 			<a href="{{pathFor 'edit' _id=_id}}">Edit</a>
@@ -32,37 +33,29 @@
 	</div>
 </template>
 
-<template name="resumeShowcase">
+<template name="editShowcase">
 	<div class="showcase">
 		<div class="fivecol">
-		<h2>About Me</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, voluptatum, odio quis repellat modi cumque quidem aperiam iusto quaerat at ea alias animi nostrum neque molestiae natus cupiditate rem ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veniam, officiis, dolorem, sequi dignissimos mollitia rerum magnam maxime est non dicta nam repellendus!</p>
+			<h2>About Me</h2>
+			<textarea></textarea>
 		</div>
 		<div class="sevencol last">
-			<iframe src="//player.vimeo.com/video/76757058" width="510" height="287" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			<input type="text" placeholder="video embed code">
 		</div>
 	</div>
 </template>
 
-<template name="resumeExperience">
+<template name="editExperience">
 	<div class="experience">
 		<h2>Work Experience</h2>
-		<div class="twelvecol">
-			<h3>Google - Summer 2013</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, asperiores, mollitia, explicabo autem ipsa amet accusantium unde reiciendis corrupti quod sunt et beatae eaque nesciunt laudantium natus voluptatem neque sit.</p>
-		</div>
-		<div class="twelvecol">
-			<h3>Facebook - Summer 2012</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, corporis, expedita, excepturi, id repellendus ratione libero voluptatum obcaecati quis possimus maxime quisquam earum. Sapiente, dolor doloremque a cumque rem tempora!</p>
-		</div>
-		<div class="twelvecol">
-			<h3>Microsoft - Summer 2011</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, impedit rem earum temporibus iusto non laudantium repellat incidunt. Dignissimos, a sit consectetur quos ab voluptate quibusdam ad laboriosam odit labore!</p>
-		</div>
+		<input type="text" placeholder="company">
+		<input type="text" placeholder="title">
+		<input type="text" placeholder="description">
+		<button>+</button>
 	</div>
 </template>
 
-<template name="resumeSchool">
+<template name="editSchool">
 	<h2>School Experience</h2>
 	<div class="twelvecol">
 		<h3>Projects</h3>
@@ -78,7 +71,7 @@
 	</div>
 </template>
 
-<template name="resumeSkills">
+<template name="editSkills">
     <h2>Skills</h2>
                
     <div class="twelvecol">
@@ -130,14 +123,14 @@
     </div>
 </template>
 
-<template name="resumeExtra">
+<template name="editExtra">
 	<h2>Extra Information</h2>
 	<div class="twelvecol">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, illum, perspiciatis, quia eligendi amet animi impedit adipisci atque iste cum porro ex vero neque reiciendis sequi quisquam ipsam? In, dicta.</p>
 	</div>
 </template>
 
-<template name="resumeContact">
+<template name="editContact">
     <h2>Contact Information</h2>        
         <div class="twelvecol">
                 <div class="twocol">
