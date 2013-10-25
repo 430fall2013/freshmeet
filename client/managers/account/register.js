@@ -88,6 +88,7 @@ Template.registerForm.events({
 			}, function (error) {
 				if (error) {
 					throwError('Error creating account.');
+					console.log(error);
 				}
 				else {
 					console.log('Success');
