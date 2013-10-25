@@ -1,5 +1,123 @@
 <template name="profilerecruiter">
 	<div class="twelvecol">
-		<h1>RECRUITER</h1>
+		{{> recruiter}}
+	</div>
+</template>
+
+<template name="recruiter">
+	<div class="twelvecol">
+		<div class="fourcol">
+			<img src="/images/recruiter.jpg">
+		</div>
+		<div class="eightcol last">
+			<h1>Sally Davis</h1>
+			<p><strong>Company:</strong> <a href="{{pathFor 'profilecompany'}}">Tesla Motors, Inc.</a></p>
+			<p><strong>Recruiter Location:</strong> Palo Alto, California</p>
+		</div>
+	</div>
+
+	<div class="row join-row" align="center">
+		<div class="onecol">
+		</div>
+		<div class="twocol">
+			<button class="join-now about-recruiter-button">About</button></a>
+		</div>
+		<div class="twocol">
+			<button class="join-now job-recruiter-button">Jobs</button></a>
+		</div>
+		<div class="twocol">
+			<button class="join-now internship-recruiter-button">Internships</button></a>
+		</div>
+		<div class="twocol">
+			<button class="join-now calendar-recruiter-button">Calendar</button></a>
+		</div>
+		<div class="twocol">
+			<button class="join-now faq-recruiter-button">FAQ</button></a>
+		</div>
+		<div class="onecol last">
+		</div>
+
+	</div>
+
+	<!--display main content -->
+
+    {{#if isRecruiterAbout}}
+        {{> aboutRecruiterSection}}
+    {{/if}}
+    {{#if isRecruiterJob}}
+        {{> jobRecruiterSection}}
+    {{/if}}
+    {{#if isRecruiterInternship}}
+        {{> internshipRecruiterSection}}
+    {{/if}}
+    {{#if isRecruiterCalendar}}
+        {{> calendarRecruiterSection}}
+    {{/if}}
+    {{#if isRecruiterFAQ}}
+        {{> faqRecruiterSection}}
+    {{/if}}
+</template>
+
+<template name="aboutRecruiterSection">
+	<div class="twelvecol">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, at voluptates eaque atque culpa maiores maxime doloremque voluptatibus repellat dicta tempora fugit expedita saepe perferendis reprehenderit sequi soluta possimus autem! </p>
+	</div>
+</template>
+
+<template name="jobRecruiterSection">
+	<div class="container twelvecol">
+		<h1>New Hire (Electrical)</h1>
+		<p><strong>Department:</strong> Engineering</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+	<div class="container twelvecol">
+		<h1>New Hire (Mechanical)</h1>
+		<p><strong>Department:</strong> Engineering</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+	<div class="container twelvecol">
+		<h1>New Hire (Developer)</h1>
+		<p><strong>Department:</strong> Engineering</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+	<div class="container twelvecol">
+		<h1>New Hire (Sales)</h1>
+		<p><strong>Department:</strong> Sales</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+</template>
+
+<template name="internshipRecruiterSection">
+	<div class="container twelvecol">
+		<h1>Summer Intern 2014 (Electrical)</h1>
+		<p><strong>Department:</strong> Engineering</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+	<div class="container twelvecol">
+		<h1>Summer Intern 2014 (Mechanical)</h1>
+		<p><strong>Department:</strong> Engineering</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+	<div class="container twelvecol">
+		<h1>Summer Intern 2014 (Developer)</h1>
+		<p><strong>Department:</strong> Engineering</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+	<div class="container twelvecol">
+		<h1>Summer Intern 2014 (Sales)</h1>
+		<p><strong>Department:</strong> Sales</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+</template>
+
+<template name="calendarRecruiterSection">
+	<div class="twelvecol">
+		<img src="/images/calendar.jpg">
+	</div>
+</template>
+
+<template name="faqRecruiterSection">
+	<div class="twelvecol">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, at voluptates eaque atque culpa maiores maxime doloremque voluptatibus repellat dicta tempora fugit expedita saepe perferendis reprehenderit sequi soluta possimus autem!</p>
 	</div>
 </template>
