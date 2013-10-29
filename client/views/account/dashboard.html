@@ -1,24 +1,43 @@
 <template name="dashboard">
 	<div class="twelvecol">
 		<h1 align="center" style="color:orange">{{profile/fname}} {{profile/lname}}!</h1>
-		<div class="sixcol">
-			<div class="container twelvecol">
-				<p align="center" style="color:orange"><strong>My Messages</strong></p>
-				<p>message from: (recruiter name w/ link), short message preview</p>
-				<p>message 2.... continued</p>
-			</div>
-			<div class="container twelvecol">
-				<p align="center" style="color:orange"><strong>account info</strong></p>
-				<p>change password</p>
-				<p>name</p>
-				<p>primary e-mail</p>
 
-			</div>
-		</div>
-		<div class="sixcol last">
-			<p align="center" style="color:orange"><strong>Job Tracker/Analytics</strong></p>
-			<img src="/images/chart.png">
+		{{{accountTypeDashboard}}}
+		
 
+	</div>
+</template>
+
+<template name="studentDashboard">
+
+	<div class="sixcol">
+		<div class="container twelvecol">
+			<p align="center" style="color:orange"><strong>My Messages</strong></p>
+			<p>message from: (recruiter name w/ link), short message preview</p>
+			<p>message 2.... continued</p>
 		</div>
+		<div class="container twelvecol">
+			<p align="center" style="color:orange"><strong>account info</strong></p>
+			<p>change password</p>
+			<p>name</p>
+			<p>primary e-mail</p>
+		</div>
+	</div>
+	<div class="sixcol last">
+		<p align="center" style="color:orange"><strong>Job Tracker/Analytics</strong></p>
+		<img src="/images/chart.png">
+	</div>
+
+</template>
+
+<template name="recruiterDashboard">
+	<div class="twelvecol">
+		<h1>recruiter!</h1>
+	</div>
+</template>
+
+<template name="facultyDashboard">
+	<div class="twelvecol">
+		<h1>faculty</h1>
 	</div>
 </template>
