@@ -33,6 +33,21 @@ Template.registerInfo.helpers({
 	}
 });
 
+Template.registerForm.helpers({
+	currentRegForm: function() {
+		var type = Session.get('registerType');
+		if (type == 'Student') {
+			return Template.studentRegister();
+		}
+		else if (type == 'Employer') {
+			return Template.employerRegister();
+		}
+		else if (type == 'Faculty') {
+			return Template.facultyRegister();
+		}
+	}
+});
+
 Template.registerForm.events({
 	'click #radio': function() {
 		var type = $('#radio :radio:checked + label').text();

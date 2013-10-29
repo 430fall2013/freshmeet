@@ -14,33 +14,9 @@
 			<input type="radio" id="radio2" name="radio" /><label for="radio2">Employer</label>
 			<input type="radio" id="radio3" name="radio" /><label for="radio3">Faculty</label>
 		</div>
-		<!--use different templates for differnt people -->
-
-		{{{reg}}} <!--this is html code -->
-<!--
-		Template.regform.helpers({
-			reg: function() {
-			return Template.name;
-		}
-	})
--->
-
-		<label for="fname">First Name</label>
-		<input type="text" name="fname" id="fname" />
-
-		<label for="lname">Last Name</label>
-		<input type="text" name="lname" id="lname" />
-
-		<label for="email">Email</label>
-		<input type="email" name="email" id="email" />
-
-		<label for="password">Password</label>
-		<input type="password" name="password" id="password" />
-
-		<label for="confirm">Confirm Password</label>
-		<input type="password" name="confirm" id="confirm" />
-
-		<button class="submit">Join Now!</button>
+	
+		{{{currentRegForm}}}
+		
 	</div>	
 </template>
 
@@ -56,4 +32,64 @@
 			<li>Maiores, veniam, at ullam quam dicta ut architecto id optio adipisci ipsa eveniet consequatur perferendis neque nisi hic doloremque doloribus temporibus sunt!</li>
 		</ul>
 	</div>
+</template>
+
+<template name="studentRegister">
+	<h2>Student Register Form</h2>
+	<label for="fname">First Name</label>
+	<input type="text" name="fname" id="fname" />
+
+	<label for="lname">Last Name</label>
+	<input type="text" name="lname" id="lname" />
+
+	<label for="email">Email</label>
+	<input type="email" name="email" id="email" />
+
+	<label for="password">Password</label>
+	<input type="password" name="password" id="password" />
+
+	<label for="confirm">Confirm Password</label>
+	<input type="password" name="confirm" id="confirm" />
+
+	<button class="submit">Join Now!</button>
+</template>
+
+<template name="employerRegister">
+	<h2>Employer Register Form</h2>
+	<label for="fname">First Name</label>
+	<input type="text" name="fname" id="fname" />
+
+	<label for="lname">Last Name</label>
+	<input type="text" name="lname" id="lname" />
+
+	<label for="email">Email</label>
+	<input type="email" name="email" id="email" />
+
+	<label for="password">Password</label>
+	<input type="password" name="password" id="password" />
+
+	<label for="confirm">Confirm Password</label>
+	<input type="password" name="confirm" id="confirm" />
+
+	<button class="submit">Join Now!</button>
+</template>
+
+<template name="facultyRegister">
+	<h2>Faculty Register Form</h2>
+	<label for="fname">First Name</label>
+	<input type="text" name="fname" id="fname" />
+
+	<label for="lname">Last Name</label>
+	<input type="text" name="lname" id="lname" />
+
+	<label for="email">Email</label>
+	<input type="email" name="email" id="email" />
+
+	<label for="password">Password</label>
+	<input type="password" name="password" id="password" />
+
+	<label for="confirm">Confirm Password</label>
+	<input type="password" name="confirm" id="confirm" />
+
+	<button class="submit">Join Now!</button>
 </template>
