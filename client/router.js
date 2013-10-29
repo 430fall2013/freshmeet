@@ -13,6 +13,11 @@ Router.map(function() {
 	this.route('profileschool');
 	this.route('profilerecruiter');
 	this.route('profilecompany');
+	this.route('dashboard', {
+		path: '/dashboard/:_id',
+		data: function() {return Meteor.users.findOne(this.params._id);},
+		waitOn: function() {return usersHandle;}
+	});
 	this.route('profile', {
 		path: '/profile/:_id',
 		data: function() {return Meteor.users.findOne(this.params._id);},

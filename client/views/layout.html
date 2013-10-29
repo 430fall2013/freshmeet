@@ -34,17 +34,18 @@
 </template>
 
 <template name="nav">
-	<ul class="directory ninecol">
+	<ul class="directory eightcol">
 		<li><a href="{{pathFor 'home'}}">Home</a></li>
 		<li><a href="{{pathFor 'about'}}">About</a></li>
 		<li><a href="{{pathFor 'contact'}}">Contact</a></li>
 		<li><a href="{{pathFor 'profilestudent'}}">Student</a></li>
 		<li><a href="{{pathFor 'profileschool'}}">School</a></li>
-		<li><a href="{{pathFor 'profilerecruiter'}}">Recruiter</a></li>
-		<li><a href="{{pathFor 'profilecompany'}}">Company</a></li>
+		<li><a href="{{pathFor 'profilerecruiter'}}">Recruitr</a></li>
+		<li><a href="{{pathFor 'profilecompany'}}">Comp.</a></li>
 	</ul>
-	<ul class="controls threecol last">
+	<ul class="controls fourcol last">
 		{{#if isLoggedIn}}
+			<li><a href="{{pathFor 'dashboard' _id=profileId}}">Dashboard</a></li>
 			<li><a href="{{pathFor 'profile' _id=profileId}}">Profile</a></li>
 			<li><a class="logout-link" href="#">Logout</a></li>
 		{{else}}

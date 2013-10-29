@@ -5,9 +5,9 @@
 				<img src="/images/student.jpg" alt="student"/>
 			</div>
 			<div class="eightcol last">
-				<h3>Welcome {{emails/0/address}}!</h3>
+				<h3>Welcome {{profile/fname}} {{profile/lname}}!</h3>
 				<ul>
-					<li>{{profile/fname}} {{profile/lname}}</li>
+					<li>{{emails/0/address}}</li>
 					<li>California State University, Chico</li>
 					<li>Computer Science, May 2016</li>
 				</ul>
@@ -140,23 +140,23 @@
 <template name="resumeContact">
     <h2>Contact Information</h2>        
         <div class="twelvecol">
-                <div class="twocol">
-                        <p>E-mail:</p>
-                        <br>
-                        <p>Phone:</p>
-                        <br>
-                        <p>Address:</p>
-                        <br>
-                        <p>Website:</p>
-                </div>
-                <div class="fourcol">
-                        <p>john.smith@email.com</p>
-                        <br>
-                        <p>(123)456-7890</p>
-                        <br>
-                        <p>1234 Main Street</p>
-                        <br>
-                        <p>www.mywebsite.com</p>
-                </div>
+            <div class="twocol">
+                <p>E-mail:</p>
+                <br>
+                <p>Phone:</p>
+                <br>
+                <p>Address:</p>
+                <br>
+                <p>Website:</p>
+            </div>
+            <div class="fourcol">
+                <p>john.smith@email.com</p>
+                <br>
+                <p>(123)456-7890</p>
+                <br>
+                <p>1234 Main Street</p>
+                <br>
+                <p>www.mywebsite.com</p>
+            </div>
         </div>
 </template>
