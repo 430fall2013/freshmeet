@@ -1,7 +1,7 @@
 Template.profile.helpers({
 	profileType: function() {
 		var id = Router._current.params._id;
-		var user = Meteor.user(id);
+		var user = Meteor.users.findOne(id);
 		if (user.profile.type == 'Student') {
 			return Template.studentProfile();
 		}
@@ -35,11 +35,11 @@ Template.studentProfile.helpers({
 		}
 	},
 	_id: function() {
-		return Meteor.user()._id;
+		return Router._current.params._id;
 	},
 	user: function() {
 		var id = Router._current.params._id;
-		return Meteor.user(id);
+		return Meteor.users.findOne(id);
 	}
 });
 
@@ -102,7 +102,7 @@ Template.employerProfile.helpers({
 	},
 	user: function() {
 		var id = Router._current.params._id;
-		return Meteor.user(id);
+		return Meteor.users.findOne(id);
 	}
 });
 Template.employerProfile.events({
@@ -151,7 +151,7 @@ Template.facultyProfile.helpers({
 	},
 	user: function() {
 		var id = Router._current.params._id;
-		return Meteor.user(id);
+		return Meteor.users.findOne(id);
 	}
 });
 

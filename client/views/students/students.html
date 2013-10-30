@@ -9,7 +9,6 @@
 
 <template name="student">
 	<div class="twelvecol student">
-		<p>fname: {{profile/fname}}</p>
-		<p>lname: {{profile/lname}}</p>
+		<p><a href="{{pathFor 'profile' _id=_id}}">{{profile/fname}} {{profile/lname}}</a></p>
 	</div>
 </template>
