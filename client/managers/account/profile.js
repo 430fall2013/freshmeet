@@ -136,3 +136,45 @@ Template.employerProfile.rendered = function() {
 			break;
 	}
 };
+
+Template.facultyProfile.helpers({
+	detailSection: function() {
+		section = Session.get('currentDetailSection');
+		switch (section) {
+			case 'About':
+				return Template.facultyAbout();
+			case 'Contact':
+				return Template.facultyContact();
+			default:
+				return Template.facultyAbout();
+		}
+	},
+	user: function() {
+		var id = Router._current.params._id;
+		return Meteor.user(id);
+	}
+});
+
+Template.facultyProfile.events({
+ 	'click .detail-nav li a': function(e) {
+		e.preventDefault();
+
+		//sets value of current section to button text
+		Session.set('currentDetailSection', $(e.target).text());
+	},
+});
+
+Template.facultyProfile.rendered = function() {
+	section = Session.get('currentDetailSection');
+	switch (section) {
+		case 'About':
+			$('.detail-nav li a:contains("'+section+'")').addClass('active');
+			break;
+		case 'Contact':
+			$('.detail-nav li a:contains("'+section+'")').addClass('active');
+			break;
+		default:
+			$('.detail-nav li a:contains("About")').addClass('active');
+			break;
+	}
+};

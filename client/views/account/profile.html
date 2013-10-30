@@ -70,6 +70,32 @@
 </template>
 
 <template name="facultyProfile">
+	<div class="profile">
+		<div class="info row">
+			<div class="fourcol image">
+				<img src="/images/recruiter.jpg"/>
+			</div>
+			<div class="eightcol last">
+				<h3>Welcome {{user/profile/fname}} {{user/profile/lname}}!</h3>
+				<ul>
+					<li>California State University, Chico</li>
+					<li>Chico, CA</li>
+					<li>Account Type: {{user/profile/type}}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="detail row">
+			<div class="twelvecol">
+				<ul class="detail-nav">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+			<div class="detail-section">
+				{{{detailSection}}}
+			</div>
+		</div>
+	</div>
 </template>
 
 <template name="studentShowcase">
@@ -267,5 +293,19 @@
 	<div class="twelvecol">
 		<h3>Contact</h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, ducimus, voluptatem ex vitae doloribus aspernatur explicabo iusto ullam distinctio possimus cumque natus officiis voluptate officia repellendus magnam quam quidem voluptatibus!</p>
+	</div>
+</template>
+
+<template name="facultyAbout">
+	<div class="twelvecol">
+		<h3>About</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, incidunt, rem neque saepe amet ex quis adipisci culpa quae consequuntur laudantium veniam ullam molestias consectetur perferendis ipsam nesciunt a! Perferendis!</p>
+	</div>
+</template>
+
+<template name="facultyContact">
+	<div class="twelvecol">
+		<h3>Contact</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, esse, natus in libero repellendus non a labore asperiores voluptatem ab consequatur voluptas velit doloremque delectus voluptate voluptates illo similique reprehenderit.</p>
 	</div>
 </template>
