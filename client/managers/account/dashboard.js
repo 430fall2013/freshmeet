@@ -71,19 +71,19 @@ Template.createJob.events({
 			throwError('...you managed to miss everything')
 		}
 
-		if (!errorFlag) {
-			jobs = new Meteor.Collection("jobs");
-			jobs.insert({jname: jname, title: title, description: description, expdate: expdate})//work in progress....
-			}, function (error) {
-				if (error) {
-					throwError('Error creating account.');
-					console.log(error);
-				}
-				else {
-					console.log('Success');
-					Router.go('home');
-				}
-			});
-		}
+		// if (!errorFlag) {
+		// 	jobs = new Meteor.Collection("jobs");
+		// 	jobs.insert({jname: jname, title: title, description: description, expdate: expdate})//work in progress....
+		// 	}, function (error) {
+		// 		if (error) {
+		// 			throwError('Error creating account.');
+		// 			console.log(error);
+		// 		}
+		// 		else {
+		// 			console.log('Success');
+		// 			Router.go('home');
+		// 		}
+		// 	});
+		// }
 	}
 });
