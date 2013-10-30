@@ -31,8 +31,12 @@
 </template>
 
 <template name="recruiterDashboard">
-	<div class="twelvecol">
-		<h1>recruiter!</h1>
+	<div class="sixcol">
+		{{> createJob}}
+	</div>
+
+	<div class="sixcol last">
+		{{> jobList}}
 	</div>
 </template>
 
@@ -40,4 +44,40 @@
 	<div class="twelvecol">
 		<h1>faculty</h1>
 	</div>
+</template>
+
+
+<template name="createJob">
+	<h2>Create Job/Intership Post</h2>
+	<label for="jname">Job/Internship Name</label>
+	<input type="text" name="jname" id="jname" />
+
+	<label for="title">Title</label>
+	<input type="text" name="title" id="title" />
+
+	<label for="description">Description</label>
+	<input type="text" name="description" id="description" />
+
+	<label for="expdate">Post Expiration Date</label>
+	<input type="text" name="expdate" id="expdate" />
+
+	<label for="major">Major</label>
+	<input type="text" name="major" id="major" />
+
+	<label for="skill1">Skill 1</label>
+	<input type="text" name="skill2" id="skill1" />
+
+	<label for="skill2">Skill 2</label>
+	<input type="text" name="skill2" id="skill2" />
+
+	<label for="skill3">Skill 3</label>
+	<input type="text" name="skill3" id="skill3" />
+
+
+	<button class="submit">POST!</button>
+</template>
+
+<template name="jobList">
+	<h1>Job/Internship List</h1>
+
 </template>
