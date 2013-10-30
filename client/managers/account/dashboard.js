@@ -24,7 +24,8 @@ Template.createJob.events({
 			major: $('#major').val(),
 			skill1: $('#skill1').val(),
 			skill2: $('#skill2').val(),
-			skill3: $('#skill3').val()
+			skill3: $('#skill3').val(),
+			recruiterID: Meteor.user()._id
 		}
 
 		var errorFlag = false;
@@ -64,7 +65,15 @@ Template.createJob.events({
 
 		if (!errorFlag) {
 			Meteor.call('newJobPosting', job);	
-			Router.go('jobs');
+			//Router.go('jobs');
 		}
+	}
+});
+
+Template.jobList.helpers({
+	populateJobsList: function() {
+		console.log(Jobs.find());
+		return Jobs.find();
+
 	}
 });
