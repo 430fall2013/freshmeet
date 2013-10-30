@@ -18,6 +18,9 @@ Template.nav.rendered = function() {
 	else if (path.split('/')[1] == 'profile') {
 		$('.nav li a:contains("Profile")').addClass('active');
 	}
+	else if (path.split('/')[1] == 'dashboard') {
+		$('.nav li a:contains("Dashboard")').addClass('active');
+	}
 	else if (path == '/profilestudent') {
 		$('.nav li a:contains("Student")').addClass('active');
 	}
