@@ -9,6 +9,6 @@
 
 <template name="facultyMember">
 	<div class="twelvecol faculty-member">
-		<p>{{profile/fname}} {{profile/lname}}</p>
+		<p><a href="{{pathFor 'profile' _id=_id}}">{{profile/fname}} {{profile/lname}}</a></p>
 	</div>
 </template>
