@@ -1,0 +1,11 @@
+<template name="jobs">
+	<h3>Jobs</h3>
+	{{#each this}}
+		{{> job}}
+	{{/each}}
+</template>
+
+<template name="job">
+	<p>{{title}}</p>
+	<p>{{description}}</p>
+</template>

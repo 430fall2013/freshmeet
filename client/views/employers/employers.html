@@ -1,0 +1,10 @@
+<template name="employers">
+	<h3>Employers</h3>
+	{{#each this}}
+		{{> employer}}
+	{{/each}}
+</template>
+
+<template name="employer">
+	<p>{{profile/fname}} {{profile/lname}}</p>
+</template>

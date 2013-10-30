@@ -1,0 +1,11 @@
+<template name="companies">
+	<h3>Companies</h3>
+	{{#each this}}
+		{{> company}}
+	{{/each}}
+</template>
+
+<template name="company">
+	<p>{{name}}</p>
+	<p>{{description}}</p>
+</template>

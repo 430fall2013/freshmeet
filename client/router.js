@@ -9,9 +9,31 @@ Router.map(function() {
 	this.route('register');
 	this.route('login');
 	this.route('contact');
-	this.route('students');
-	this.route('companies');
-	this.route('jobs');
+	this.route('students', {
+		path: '/students',
+		data: function() {return Students.find();},
+		waitOn: function() {return studentsHandle;}
+	});
+	this.route('faculty', {
+		path: '/faculty',
+		data: function() {return Faculty.find();},
+		waitOn: function() {return facultyHandle;}
+	});
+	this.route('employers', {
+		path: '/employers',
+		data: function() {return Employers.find();},
+		waitOn: function() {return employersHandle;}
+	});
+	this.route('companies', {
+		path: '/companies',
+		data: function() {return Companies.find();},
+		waitOn: function() {return companiesHandle;}
+	});
+	this.route('jobs', {
+		path: '/jobs',
+		data: function() {return Jobs.find();},
+		waitOn: function() {return jobsHandle;}
+	});
 	this.route('dashboard', {
 		path: '/dashboard/:_id',
 		data: function() {return Meteor.users.findOne(this.params._id);},

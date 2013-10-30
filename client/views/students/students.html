@@ -1,0 +1,10 @@
+<template name="students">
+	<h3>Students</h3>
+	{{#each this}}
+		{{> student}}
+	{{/each}}
+</template>
+
+<template name="student">
+	<p>{{profile/fname}} {{profile/lname}}</p>
+</template>

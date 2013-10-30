@@ -3,7 +3,15 @@ Meteor.publish('users', function() {
 });
 
 Meteor.publish('students', function() {
-	return Meteor.user.find();
+	return Students.find();
+});
+
+Meteor.publish('faculty', function() {
+	return Faculty.find();
+});
+
+Meteor.publish('employers', function() {
+	return Employers.find();
 });
 
 Meteor.publish('companies', function() {

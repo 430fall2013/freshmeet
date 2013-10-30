@@ -1,0 +1,1 @@
+Employers = new Meteor.Collection('employers');
