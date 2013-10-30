@@ -16,74 +16,55 @@ Template.dashboard.helpers({
 
 Template.createJob.events({
 	'click .submit': function() {
-		var jname = $('#jname').val();
-		var title = $('#title').val();
-		var description = $('#description').val();
-		var expdate = $('#expdate').val();
-		var major = $('#major').val();
-		var skill1 = $('#skill1').val();
-		var skill2 = $('#skill2').val();
-		var skill3 = $('#skill3').val();
-		var errorFlag = false;
-		var errorCounter = 0;
+		var job = {
+			jname: $('#jname').val(),
+			title: $('#title').val(),
+			description: $('#description').val(),
+			expdate: $('#expdate').val(),
+			major: $('#major').val(),
+			skill1: $('#skill1').val(),
+			skill2: $('#skill2').val(),
+			skill3: $('#skill3').val()
+		}
 
-		if (!jname) {
+		var errorFlag = false;
+
+		if (!job.jname) {
 			throwError('No job name entered.');
 			errorFlag = true;
-			errorCounter++;
 		}
-		if (!title) {
+		if (!job.title) {
 			throwError('No job title entered.');
 			errorFlag = true;
-			errorCounter++;
 		}
-		if (!description) {
+		if (!job.description) {
 			throwError('No description entered.');
 			errorFlag = true;
-			errorCounter++;
 		}
-		if (!expdate) {
+		if (!job.expdate) {
 			throwError('No expiration date entered.');
 			errorFlag = true;
-			errorCounter++;
 		}
-		if (!major) {
+		if (!job.major) {
 			throwError('No major entered.');
 			errorFlag = true;
-			errorCounter++;
 		}
-		if (!skill1) {
+		if (!job.skill1) {
 			throwError('No skill 1 entered.');
 			errorFlag = true;
-			errorCounter++;
 		}
-		if (!skill2) {
+		if (!job.skill2) {
 			throwError('No skill 2 entered.');
 			errorFlag = true;
-			errorCounter++;
 		}
-		if (!skill3) {
+		if (!job.skill3) {
 			throwError('No skill 3 entered.');
 			errorFlag = true;
-			errorCounter++;
-		}
-		if (errorCounter > 7) {
-			throwError('...you managed to miss everything')
 		}
 
-		// if (!errorFlag) {
-		// 	jobs = new Meteor.Collection("jobs");
-		// 	jobs.insert({jname: jname, title: title, description: description, expdate: expdate})//work in progress....
-		// 	}, function (error) {
-		// 		if (error) {
-		// 			throwError('Error creating account.');
-		// 			console.log(error);
-		// 		}
-		// 		else {
-		// 			console.log('Success');
-		// 			Router.go('home');
-		// 		}
-		// 	});
-		// }
+		if (!errorFlag) {
+			Meteor.call('newJobPosting', job);	
+			Router.go('jobs');
+		}
 	}
 });

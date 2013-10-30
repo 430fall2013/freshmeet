@@ -107,6 +107,15 @@ Template.registerForm.events({
 				}
 				else {
 					console.log('Success');
+					if (type == 'Student') {	
+						Meteor.call('newStudent', Meteor.user());
+					}
+					else if (type == 'Employer') {
+						Meteor.call('newEmployer', Meteor.user());
+					}
+					else if (type == 'Faculty') {
+						Meteor.call('newFaculty', Meteor.user());
+					}
 					Router.go('home');
 				}
 			});

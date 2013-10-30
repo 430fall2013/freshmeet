@@ -12,26 +12,20 @@ Template.nav.rendered = function() {
 	else if (path == '/about') {
 		$('.nav li a:contains("About")').addClass('active');
 	}
-	else if (path == '/contact') {
-		$('.nav li a:contains("Contact")').addClass('active');
-	}
 	else if (path.split('/')[1] == 'profile') {
 		$('.nav li a:contains("Profile")').addClass('active');
 	}
 	else if (path.split('/')[1] == 'dashboard') {
 		$('.nav li a:contains("Dashboard")').addClass('active');
 	}
-	else if (path == '/profilestudent') {
-		$('.nav li a:contains("Student")').addClass('active');
+	else if (path == '/students') {
+		$('.nav li a:contains("Students")').addClass('active');
 	}
-	else if (path == '/profileschool') {
-		$('.nav li a:contains("School")').addClass('active');
+	else if (path == '/companies') {
+		$('.nav li a:contains("Companies")').addClass('active');
 	}
-	else if (path == '/profilerecruiter') {
-		$('.nav li a:contains("Recruiter")').addClass('active');
-	}
-	else if (path == '/profilecompany') {
-		$('.nav li a:contains("Company")').addClass('active');
+	else if (path == '/jobs') {
+		$('.nav li a:contains("Jobs")').addClass('active');
 	}
 	else {
 		$('.nav li a:contains("Home")').addClass('active');
