@@ -1,10 +1,14 @@
 <template name="faculty">
 	<h3>Faculty</h3>
-	{{#each this}}
-		{{> facultyMember}}
-	{{/each}}
+	<div class="twelvecol faculty-listings">
+		{{#each this}}
+			{{> facultyMember}}
+		{{/each}}
+	</div>
 </template>
 
 <template name="facultyMember">
-	<p>{{profile/fname}} {{profile/lname}}</p>
+	<div class="twelvecol faculty-member">
+		<p>{{profile/fname}} {{profile/lname}}</p>
+	</div>
 </template>

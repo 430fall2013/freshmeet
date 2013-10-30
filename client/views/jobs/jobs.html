@@ -1,12 +1,16 @@
 <template name="jobs">
 	<h3>Jobs</h3>
-	{{#each this}}
-		{{> job}}
-	{{/each}}
+	<div class="twelvecol job-listings">
+		{{#each this}}
+			{{> job}}
+		{{/each}}
+	</div>
 </template>
 
 <template name="job">
-	<p>jname: {{jname}}</p>
-	<p>title: {{title}}</p>
-	<p>description: {{description}}</p>
+	<div class="twelvecol job">
+		<p>jname: {{jname}}</p>
+		<p>title: {{title}}</p>
+		<p>description: {{description}}</p>
+	</div>
 </template>

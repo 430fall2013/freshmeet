@@ -1,11 +1,15 @@
 <template name="companies">
 	<h3>Companies</h3>
-	{{#each this}}
-		{{> company}}
-	{{/each}}
+	<div class="twelvcol company-listings">
+		{{#each this}}
+			{{> company}}
+		{{/each}}
+	</div>
 </template>
 
 <template name="company">
-	<p>{{name}}</p>
-	<p>{{description}}</p>
+	<div class="twelvecol company">
+		<p>{{name}}</p>
+		<p>{{description}}</p>
+	</div>
 </template>

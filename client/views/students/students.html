@@ -1,10 +1,15 @@
 <template name="students">
 	<h3>Students</h3>
-	{{#each this}}
-		{{> student}}
-	{{/each}}
+	<div class="twelvecol student-listings">
+		{{#each this}}
+			{{> student}}
+		{{/each}}
+	</div>
 </template>
 
 <template name="student">
-	<p>{{profile/fname}} {{profile/lname}}</p>
+	<div class="twelvecol student">
+		<p>fname: {{profile/fname}}</p>
+		<p>lname: {{profile/lname}}</p>
+	</div>
 </template>

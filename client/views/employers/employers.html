@@ -1,10 +1,14 @@
 <template name="employers">
 	<h3>Employers</h3>
-	{{#each this}}
-		{{> employer}}
-	{{/each}}
+	<div class="twelvecol employer-listings">
+		{{#each this}}
+			{{> employer}}
+		{{/each}}
+	</div>
 </template>
 
 <template name="employer">
-	<p>{{profile/fname}} {{profile/lname}}</p>
+	<div class="employer">
+		<p>{{profile/fname}} {{profile/lname}}</p>
+	</div>
 </template>
