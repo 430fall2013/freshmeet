@@ -1,22 +1,27 @@
 <template name="profile">
+	{{{profileType}}}
+</template>
+
+<template name="studentProfile">
 	<div class="profile">
 		<div class="info row">
 			<div class="fourcol image">
 				<img src="/images/student.jpg" alt="student"/>
 			</div>
 			<div class="eightcol last">
-				<h3>Welcome {{profile/fname}} {{profile/lname}}!</h3>
+				<h3>Welcome {{user/profile/fname}} {{user/profile/lname}}!</h3>
 				<ul>
-					<li>{{emails/0/address}}</li>
+					<li>{{user/emails/0/address}}</li>
 					<li>California State University, Chico</li>
 					<li>Computer Science, May 2016</li>
+					<li>Account Type: {{user/profile/type}}</li>
 				</ul>
 			</div>
 			<a href="{{pathFor 'edit' _id=_id}}">Edit</a>
 		</div>
-		<div class="resume row">
+		<div class="detail row">
 			<div class="twelvecol">
-				<ul class="resume-nav">
+				<ul class="detail-nav">
 					<li><a href="#">Showcase</a></li>
 					<li><a href="#">Experience</a></li>
 					<li><a href="#">School</a></li>
@@ -24,15 +29,50 @@
 					<li><a href="#">Extra</a></li>
 					<li><a href="#">Contact</a></li>
 				</ul>
-				<div class="resume-section">
-					{{{resumeSection}}}
+				<div class="detail-section">
+					{{{detailSection}}}
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
 
-<template name="resumeShowcase">
+<template name="employerProfile">
+	<div class="profile">
+		<div class="info row">
+			<div class="fourcol image">
+				<img src="/images/recruiter.jpg" />
+			</div>
+			<div class="eightcol last">
+				<h3>Welcome {{user/profile/fname}} {{user/profile/lname}}!</h3>
+				<ul>
+					<li>Tesla Motors, Inc.</li>
+					<li>Palo Alto, California</li>
+					<li>Account Type: {{user/profile/type}}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="detail row">
+			<div class="twelvecol">
+				<ul class="detail-nav">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Jobs</a></li>
+					<li><a href="#">Internships</a></li>
+					<li><a href="#">Calendar</a></li>
+					<li><a href="#">Contact</a></li>	
+				</ul>
+				<div class="detail-section">
+					{{{detailSection}}}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="facultyProfile">
+</template>
+
+<template name="studentShowcase">
 	<div class="showcase">
 		<div class="fivecol">
 		<h2>About Me</h2>
@@ -44,7 +84,7 @@
 	</div>
 </template>
 
-<template name="resumeExperience">
+<template name="studentExperience">
 	<div class="experience">
 		<h2>Work Experience</h2>
 		<div class="twelvecol">
@@ -62,7 +102,7 @@
 	</div>
 </template>
 
-<template name="resumeSchool">
+<template name="studentSchool">
 	<h2>School Experience</h2>
 	<div class="twelvecol">
 		<h3>Projects</h3>
@@ -78,7 +118,7 @@
 	</div>
 </template>
 
-<template name="resumeSkills">
+<template name="studentSkills">
     <h2>Skills</h2>
                
     <div class="twelvecol">
@@ -130,14 +170,14 @@
     </div>
 </template>
 
-<template name="resumeExtra">
+<template name="studentExtra">
 	<h2>Extra Information</h2>
 	<div class="twelvecol">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, illum, perspiciatis, quia eligendi amet animi impedit adipisci atque iste cum porro ex vero neque reiciendis sequi quisquam ipsam? In, dicta.</p>
 	</div>
 </template>
 
-<template name="resumeContact">
+<template name="studentContact">
     <h2>Contact Information</h2>        
         <div class="twelvecol">
             <div class="twocol">
@@ -159,4 +199,73 @@
                 <p>www.mywebsite.com</p>
             </div>
         </div>
+</template>
+
+<template name="employerAbout">
+	<div class="twelvecol">
+		<h3>About</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, quam esse ad totam nostrum quas! Nesciunt, hic, nulla itaque unde a eligendi ipsum molestiae velit! Voluptatum, odit dolore atque at! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, error voluptates natus sunt tenetur ea eligendi consectetur magni reiciendis dolore. Praesentium, rerum modi sit nemo exercitationem accusamus cupiditate distinctio architecto!</p>
+	</div>
+</template>
+
+<template name="employerJobs">
+	<h3>Jobs</h3>
+	<div class="twelvecol">
+		<h3>New Hire (Electrical)</h3>
+		<p><strong>Department:</strong> Engineering</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+	<div class="twelvecol">
+		<h3>New Hire (Mechanical)</h3>
+		<p><strong>Department:</strong> Engineering</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+	<div class="twelvecol">
+		<h3>New Hire (Sales)</h3>
+		<p><strong>Department:</strong> Sales</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+	<div class="twelvecol">
+		<h3>New Hire (Developer)</h3>
+		<p><strong>Department:</strong> Engineering</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+</template>
+
+<template name="employerInternships">
+	<h3>Internships</h3>
+	<div class="twelvecol">
+		<h3>Summer Intern 2014 (Electrical)</h3>
+		<p><strong>Department:</strong> Engineering</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+	<div class="twelvecol">
+		<h3>Summer Intern 2014 (Mechanical)</h3>
+		<p><strong>Department:</strong> Engineering</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+	<div class="twelvecol">
+		<h3>Summer Intern 2014 (Developer)</h3>
+		<p><strong>Department:</strong> Engineering</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+	<div class="twelvecol">
+		<h3>Summer Intern 2014 (Sales)</h3>
+		<p><strong>Department:</strong> Sales</p>
+		<p><strong>Location:</strong> Palo Alto</p>
+	</div>
+</template>
+
+<template name="employerCalendar">
+	<div class="twelvecol">
+		<h3>Calendar</h3>
+		<img src="/images/calendar.jpg">
+	</div>
+</template>
+
+<template name="employerContact">
+	<div class="twelvecol">
+		<h3>Contact</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, ducimus, voluptatem ex vitae doloribus aspernatur explicabo iusto ullam distinctio possimus cumque natus officiis voluptate officia repellendus magnam quam quidem voluptatibus!</p>
+	</div>
 </template>
