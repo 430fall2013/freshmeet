@@ -25,6 +25,11 @@ Template.createJob.events({
 			skill1: $('#skill1').val(),
 			skill2: $('#skill2').val(),
 			skill3: $('#skill3').val(),
+			gpa: $('$gpa').val(),
+			workExp: $('workExp').val(),
+			extProj: $('extProj').val(),
+			skills: $('skills').val(),
+			cLevel: $('cLevel').val(),
 			recruiterID: Meteor.user()._id
 		}
 
@@ -72,8 +77,41 @@ Template.createJob.events({
 
 Template.jobList.helpers({
 	populateJobsList: function() {
-		console.log(Jobs.find());
 		return Jobs.find();
-
 	}
 });
+
+Template.studentData.events({
+	'click .submit': function() {
+		
+			Meteor.users.update({_id: Meteor.user()._id},
+				{$set:
+					{ 
+						stats: { 
+							gpa: 5/*$('cLevel').val(),
+							cLevel: $('#cLevel').val(),
+							wExpSchool: $('#wExpSchool').val(),
+							wExpBreak: $('#wExpBreak').val(),
+							extProj: $('#extProj').val(),
+							skill1: $('#skill1').val(),
+							skill2: $('#skill2').val(),
+							skill3: $('#skill3').val()*/
+						}
+					}
+				});
+
+			console.log(this.profileId);
+	}
+});
+
+
+
+
+//$('#gpa').val(),
+			/*cLevel: $('#cLevel').val(),
+			wExpSchool: $('#wExpSchool').val(),
+			wExpBreak: $('#wExpBreak').val(),
+			extProj: $('#extProj').val(),
+			skill1: $('#skill1').val(),
+			skill2: $('#skill2').val(),
+			skill3: $('#skill3').val()*/

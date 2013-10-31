@@ -99,6 +99,9 @@ Template.registerForm.events({
 					fname: fname,
 					lname: lname,
 					type: type
+				},
+				stats: {
+					gpa: "1"
 				}
 			}, function (error) {
 				if (error) {
@@ -116,7 +119,7 @@ Template.registerForm.events({
 					else if (type == 'Faculty') {
 						Meteor.call('newFaculty', Meteor.user());
 					}
-					Router.go('home');
+					Router.go('dashboard');
 				}
 			});
 		}
