@@ -57,14 +57,15 @@ Template.registerForm.events({
 		var newProfile = {
 			fname: $('#fname').val(),
 			lname: $('#lname').val(),
+			school: $('#school').val(),
+			company: $('#company').val(),
 			email: $('#email').val(),
 			password: $('#password').val(),
 			confirm: $('#confirm').val(),
 			acctType: Session.get('registerType'),
 			emailRegEx: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 			
-			
-		}
+			}
 
 		var errorFlag = false;
 		
@@ -79,6 +80,18 @@ Template.registerForm.events({
 		if (!newProfile.email) {
 			throwError('No email entered.');
 			errorFlag = true;
+		}
+		if ((newProfile.acctType == "Student") || (newProfile.acctType == "Faculty")){
+			if(!newProfile.school){
+				throwError('No school name entered.');
+				errorFlag = true;
+			}
+		}
+		else if (newProfile.acctType == "Employer"){
+			if(!newProfile.company){
+				throwError('No company name entered.');
+				errorFlag = true;
+			}
 		}
 		if (!newProfile.password) {
 			throwError('No password entered.');
@@ -103,7 +116,9 @@ Template.registerForm.events({
 				profile: {
 					fname: newProfile.fname,
 					lname: newProfile.lname,
-					type:  newProfile.acctType
+					type:  newProfile.acctType,
+					school: newProfile.school,
+					company: newProfile.company
 				}
 			}, function (error) {
 				if (error) {
