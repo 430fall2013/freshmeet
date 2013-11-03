@@ -1,4 +1,5 @@
 <template name="edit">
+    <a href="#" class="save">Save</a>
 	<div class="profile">
 		<div class="info row">
 			<div class="fourcol image">
@@ -13,11 +14,10 @@
 					<li><input type="text" placeholder="graduation year"></li>
 				</ul>
 			</div>
-			<a href="{{pathFor 'edit' _id=_id}}">Edit</a>
 		</div>
-		<div class="resume row">
+		<div class="detail row">
 			<div class="twelvecol">
-				<ul class="resume-nav">
+				<ul class="detail-nav">
 					<li><a href="#">Showcase</a></li>
 					<li><a href="#">Experience</a></li>
 					<li><a href="#">School</a></li>
@@ -33,7 +33,7 @@
 	</div>
 </template>
 
-<template name="editShowcase">
+<template name="editStudentShowcase">
 	<div class="showcase">
 		<div class="fivecol">
 			<h2>About Me</h2>
@@ -45,7 +45,7 @@
 	</div>
 </template>
 
-<template name="editExperience">
+<template name="editStudentExperience">
 	<div class="experience">
 		<h2>Work Experience</h2>
 		<input type="text" placeholder="company">
@@ -55,101 +55,30 @@
 	</div>
 </template>
 
-<template name="editSchool">
+<template name="editStudentSchool">
 	<h2>School Experience</h2>
-	<div class="twelvecol">
-		<h3>Projects</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, odit et a! Soluta, totam, optio, voluptates natus ratione id officia doloribus ab nostrum molestias et neque obcaecati sint fugit sed.</p>
-	</div>
-	<div class="twelvecol">
-		<h3>Classes</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, aspernatur, neque, architecto placeat alias itaque optio facere eligendi minima iure odit fuga perspiciatis magni animi facilis adipisci eveniet. Quo, quis.</p>
-	</div>
-	<div class="twelvecol">
-		<h3>Clubs/Organizations</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, ex, perspiciatis nisi delectus amet adipisci quaerat tempore quod pariatur quibusdam doloremque suscipit ipsa perferendis. Optio enim corrupti veritatis odit quas!</p>
-	</div>
+    <input type="text" placeholder="title">
+    <input type="text" placeholder="description">
+    <button>+</button>
 </template>
 
-<template name="editSkills">
+<template name="editStudentSkills">
     <h2>Skills</h2>
-               
-    <div class="twelvecol">
-            <!--filler format -->
-            <div class="threecol">
-                    <p>Java</p>
-                    <br>
-                    <p>C++</p>
-                    <br>
-                    <p>Python</p>
-                    <br>
-                    <p>HTML</p>
-                    <br>
-                    <p>JavaScript</p>
-            </div>
-            <div class="threecol">
-                    <p>C++</p>
-                    <br>
-                    <p>HTML</p>
-                    <br>
-                    <p>Java</p>
-                    <br>
-                    <p>JavaScript</p>
-                    <br>
-                    <p>Python</p>
-            </div>
-            <div class="threecol">
-                    <p>C++</p>
-                    <br>
-                    <p>Python</p>
-                    <br>
-                    <p>JavaScript</p>
-                    <br>
-                    <p>HTML</p>
-                    <br>
-                    <p>Java</p>
-            </div>
-            <div class="threecol last">
-                    <p>JavaScript</p>
-                    <br>
-                    <p>C++</p>
-                    <br>
-                    <p>Java</p>
-                    <br>
-                    <p>HTML</p>
-                    <br>
-                    <p>Python</p>
-            </div>
-    </div>
+    <input type="text" placeholder="skills">
+    <button>+</button>
 </template>
 
-<template name="editExtra">
+<template name="editStudentExtra">
 	<h2>Extra Information</h2>
-	<div class="twelvecol">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, illum, perspiciatis, quia eligendi amet animi impedit adipisci atque iste cum porro ex vero neque reiciendis sequi quisquam ipsam? In, dicta.</p>
-	</div>
+	<textarea></textarea>
 </template>
 
-<template name="editContact">
+<template name="editStudentContact">
     <h2>Contact Information</h2>        
-        <div class="twelvecol">
-                <div class="twocol">
-                        <p>E-mail:</p>
-                        <br>
-                        <p>Phone:</p>
-                        <br>
-                        <p>Address:</p>
-                        <br>
-                        <p>Website:</p>
-                </div>
-                <div class="fourcol">
-                        <p>john.smith@email.com</p>
-                        <br>
-                        <p>(123)456-7890</p>
-                        <br>
-                        <p>1234 Main Street</p>
-                        <br>
-                        <p>www.mywebsite.com</p>
-                </div>
-        </div>
+    <div class="twelvecol">
+        <input type="text" placeholder="email">
+        <input type="text" placeholder="phone">
+        <input type="text" placeholder="address">
+        <input type="text" placeholder="website">
+    </div>
 </template>

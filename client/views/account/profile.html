@@ -1,4 +1,8 @@
 <template name="profile">
+	{{#if ownsProfile}}
+		<a href="{{pathFor 'edit' _id=_id}}">Edit</a>
+	{{/if}}
+	
 	{{{profileType}}}
 </template>
 

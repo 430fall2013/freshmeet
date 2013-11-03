@@ -11,6 +11,14 @@ Template.profile.helpers({
 		else if (user.profile.type == 'Faculty') {
 			return Template.facultyProfile();
 		}
+	},
+	ownsProfile: function() {
+		if (Meteor.user()._id == Router._current.params._id) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 });
 
