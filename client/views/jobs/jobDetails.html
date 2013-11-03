@@ -9,12 +9,17 @@
 		
 	</div>
 	<div class="twelvecol">
-		<div class="fivecol">
+		<div class="fourcol">
 		</div>
-		<div class="twocol">
-			<button>Apply!</button>
+		<div class="fourcol">
+			{{#if isStudent}}
+				<button>Apply!</button>
+			{{/if}}
+			{{#if isRecruiter}}
+				<button>View Applicants</button>
+			{{/if}}
 		</div>
-		<div class="twocol">
+		<div class="fourcol last">
 		</div>
 	</div>
 </template>

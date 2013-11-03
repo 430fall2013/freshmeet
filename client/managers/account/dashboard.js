@@ -25,11 +25,11 @@ Template.createJob.events({
 			skill1: $('#skill1').val(),
 			skill2: $('#skill2').val(),
 			skill3: $('#skill3').val(),
-			gpa: $('$gpa').val(),
-			workExp: $('workExp').val(),
-			extProj: $('extProj').val(),
-			skills: $('skills').val(),
-			cLevel: $('cLevel').val(),
+			gpa: $('#gpa').val(),
+			workExp: $('#workExp').val(),
+			extProj: $('#extProj').val(),
+			skills: $('#skills').val(),
+			cLevel: $('#cLevel').val(),
 			recruiterID: Meteor.user()._id
 		}
 

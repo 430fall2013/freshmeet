@@ -8,7 +8,8 @@ Template.login.events({
 				throwError('Invalid email or password.');
 			}
 			else {
-				Router.go('home');
+				//this does not work, will not route to dashboard
+				Router.go('dashboard');
 			}
 		});
 	}
