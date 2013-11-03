@@ -11,22 +11,13 @@
 <template name="studentDashboard">
 
 	<div class="sixcol">
-		<div class="container twelvecol">
-			<p align="center" style="color:orange"><strong>My Messages</strong></p>
-			<p>message from: (recruiter name w/ link), short message preview</p>
-			<p>message 2.... continued</p>
-		</div>
-		<div class="container twelvecol">
-			<p align="center" style="color:orange"><strong>account info</strong></p>
-			<p>change password</p>
-			<p>name</p>
-			<p>primary e-mail</p>
-		</div>
+		{{> studentData}}
 	</div>
-	<div class="sixcol last">
-		<p align="center" style="color:orange"><strong>Job Tracker/Analytics</strong></p>
-		<img src="/images/chart.png">
+
+	<div class="sixcol">
+		<h1> filler text </h1>
 	</div>
+
 
 </template>
 
@@ -73,17 +64,60 @@
 	<label for="skill3">Skill 3</label>
 	<input type="text" name="skill3" id="skill3" />
 
+	<label for"gpa">GPA</label>
+	<input type="number" name="gpa" id"gpa"/>
+
+	<label for"workExp">work exp</label>
+	<input type="number" name="workExp" id"workExp"/>
+	
+	<label for"extProj">external projects</label>
+	<input type="number" name="extProj" id"extProj"/>
+	
+	<label for"skills">skills</label>
+	<input type="number" name="skills" id"skills"/>
+
+	<label for"cLevel">class level</label>
+	<input type="number" name="cLevel" id"cLevel"/>
 
 	<button class="submit">POST!</button>
 </template>
 
 <template name="jobList">
-	<h1>Job/Internship List</h1>
+	<h1>Job/Internship List *should only show jobs from that recruiter*</h1>
 		{{#each populateJobsList}}
-			<p>jname: {{jname}}</p>
-			<p>title: {{title}}</p>
+			<p><strong style="color:orange">jname: {{jname}}</strong> title: {{title}}</p>
 			<p>description: {{description}}</p>
 		{{/each}}
 </template>
 
+<template name="studentData">
+	<h2>Student Information *temp while edit profile is being built*</h2>
+	<label for="name">Name</label>
+	<input type="text" name="name" id="name" />
 
+	<label for="gpa">gpa</label>
+	<input type="text" name="gpa" id="gpa" />
+
+	<label for="cLevel">Class Level</label>
+	<input type="text" name="cLevel" id="cLevel" />
+
+	<label for="wExpSchool">Work Exp. School</label>
+	<input type="text" name="wExpSchool" id="wExpSchool" />
+
+	<label for="wExpBreak">Work Exp. Breaks</label>
+	<input type="text" name="wExpBreak" id="wExpBreak" />
+
+	<label for"extProj">External Projects</label>
+	<input type="number" name="extProj" id"extProj"/>
+
+	<label for="skill1">Skill 1</label>
+	<input type="text" name="skill1" id="skill1" />
+
+	<label for="skill2">Skill 2</label>
+	<input type="text" name="skill2" id="skill2" />
+
+	<label for="skill3">Skill 3</label>
+	<input type="text" name="skill3" id="skill3" />
+
+	<button class="submit">add info!</button>
+</template>

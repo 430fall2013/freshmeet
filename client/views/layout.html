@@ -35,7 +35,6 @@
 
 <template name="nav">
 	<ul class="directory eightcol">
-		<li><a href="{{pathFor 'home'}}">Home</a></li>
 		<li><a href="{{pathFor 'students'}}">Students</a></li>
 		<li><a href="{{pathFor 'faculty'}}">Faculty</a></li>
 		<li><a href="{{pathFor 'employers'}}">Employers</a></li>
@@ -55,7 +54,8 @@
 </template>
 
 <template name="footer">
+	<a href="{{pathFor 'about'}}">About</a>
+	<a href="{{pathFor 'contact'}}">Contact</a>
 	<span class="twelvecol">Fresh Meet &copy; 2013</span>
-	<li><a href="{{pathFor 'about'}}">About</a></li>
-	<li><a href="{{pathFor 'contact'}}">Contact</a></li>
+
 </template>

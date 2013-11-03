@@ -1,0 +1,25 @@
+<template name="jobDetails">
+	<div class="twelveCol">
+		<h1>job name</h1>
+		<h2>job title</h2>
+		<p>job descripton</p>
+		<p>list of skills</p>
+		<!--add student to list of students applied to this job -->
+		<!--recruiter needs to be able to view this list -->
+		
+	</div>
+	<div class="twelvecol">
+		<div class="fourcol">
+		</div>
+		<div class="fourcol">
+			{{#if isStudent}}
+				<button>Apply!</button>
+			{{/if}}
+			{{#if isRecruiter}}
+				<button>View Applicants</button>
+			{{/if}}
+		</div>
+		<div class="fourcol last">
+		</div>
+	</div>
+</template>

@@ -9,6 +9,7 @@ Router.map(function() {
 	this.route('register');
 	this.route('login');
 	this.route('contact');
+	this.route('jobDetails');
 	this.route('students', {
 		path: '/students',
 		data: function() {return Students.find();},
