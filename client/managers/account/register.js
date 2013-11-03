@@ -54,54 +54,56 @@ Template.registerForm.events({
 		Session.set('registerType', type);
 	},
 	'click .submit': function() {
-		var fname = $('#fname').val();
-		var lname = $('#lname').val();
-		var email = $('#email').val();
-		var password = $('#password').val();
-		var confirm = $('#confirm').val();
-		var emailRegEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-		var type = Session.get('registerType');
-		var errorFlag = false;
+		var newProfile = {
+			fname: $('#fname').val(),
+			lname: $('#lname').val(),
+			email: $('#email').val(),
+			password: $('#password').val(),
+			confirm: $('#confirm').val(),
+			acctType: Session.get('registerType'),
+			emailRegEx: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+			
+			
+		}
 
-		if (!fname) {
+		var errorFlag = false;
+		
+		if (!newProfile.fname) {
 			throwError('No first name entered.');
 			errorFlag = true;
 		}
-		if (!lname) {
+		if (!newProfile.lname) {
 			throwError('No last name entered.');
 			errorFlag = true;
 		}
-		if (!email) {
+		if (!newProfile.email) {
 			throwError('No email entered.');
 			errorFlag = true;
 		}
-		if (!password) {
+		if (!newProfile.password) {
 			throwError('No password entered.');
 			errorFlag = true;
 		}
-		if (!confirm) {
+		if (!newProfile.confirm) {
 			throwError('No confirmation entered.');
 			errorFlag = true;
 		}
-		if (!email.match(emailRegEx)) {
+		if (!newProfile.email.match(newProfile.emailRegEx)) {
 			throwError('Email is invalid.');
 			errorFlag = true;
 		}
-		if (password != confirm) {
+		if (newProfile.password != newProfile.confirm) {
 			throwError('Passwords don\'t match.');
 			errorFlag = true;
 		}
 		if (!errorFlag) {
 			Accounts.createUser({
-				email: email,
-				password: password,
+				email: newProfile.email,
+				password: newProfile.password,
 				profile: {
-					fname: fname,
-					lname: lname,
-					type: type
-				},
-				stats: {
-					gpa: "1"
+					fname: newProfile.fname,
+					lname: newProfile.lname,
+					type:  newProfile.acctType
 				}
 			}, function (error) {
 				if (error) {
@@ -110,13 +112,13 @@ Template.registerForm.events({
 				}
 				else {
 					console.log('Success');
-					if (type == 'Student') {	
+					if (newProfile.acctType == 'Student') {	
 						Meteor.call('newStudent', Meteor.user());
 					}
-					else if (type == 'Employer') {
+					else if (newProfile.acctType == 'Employer') {
 						Meteor.call('newEmployer', Meteor.user());
 					}
-					else if (type == 'Faculty') {
+					else if (newProfile.acctType == 'Faculty') {
 						Meteor.call('newFaculty', Meteor.user());
 					}
 					Router.go('dashboard');
