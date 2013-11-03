@@ -5,6 +5,11 @@ Meteor.methods({
 		return Jobs.insert(job);
 	},
 	applyToJob: function(job, user) {
-		return Jobs.upsert(job, {$addToSet: {applicants: user}});
+		if (_.where(job.applicants, {'_id': user._id})) {
+			throwError('You\'ve already applied!');
+		}
+		else {
+			return Jobs.upsert(job, {$addToSet: {applicants: user}});
+		}
 	}	
 });

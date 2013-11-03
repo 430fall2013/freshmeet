@@ -12,10 +12,18 @@
 </template>
 
 <template name="job">
-	<div class="twelvecol job">
-		<a href="{{pathFor 'job' _id=this/_id}}">{{title}}</a>
+	<div class="job">
+		Title: <a href="{{pathFor 'job' _id=this/_id}}">{{title}}</a>
 		<p>Description: {{description}}</p>
 		<p>Employer: {{employer}}</p>
+
+		<ul>
+			Applicants:
+			{{#each applicants}}
+				<li><a href="{{pathFor 'profile' _id=_id}}">{{profile/fname}} {{profile/lname}}</a></li>
+			{{/each}}
+		</ul>
+
 		{{#if isStudent}}
 			<a href="#" class="apply">Apply for this job</a>
 		{{/if}}

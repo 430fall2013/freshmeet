@@ -10,7 +10,8 @@ Template.jobs.helpers({
 });
 
 Template.job.events({
-	'click .apply': function() {
+	'click .apply': function(event) {
+		event.preventDefault();
 		Meteor.call('applyToJob', this, Meteor.user());	
 	}
 });
