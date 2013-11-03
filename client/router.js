@@ -34,6 +34,7 @@ Router.map(function() {
 		data: function() {return Jobs.find();},
 		waitOn: function() {return jobsHandle;}
 	});
+	this.route('jobForm');
 	this.route('dashboard', {
 		path: '/dashboard/:_id',
 		data: function() {return Meteor.users.findOne(this.params._id);},

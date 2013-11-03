@@ -21,3 +21,14 @@ Template.home.events({
 		Session.set('registerType', 'Faculty');
 	},
 });
+
+Template.home.helpers({
+	isLoggedIn: function() {
+		if (Meteor.user()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+});

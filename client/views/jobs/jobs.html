@@ -1,6 +1,10 @@
 <template name="jobs">
 	<h3>Jobs</h3>
-	<div class="twelvecol job-listings">
+	<div class="fourcol job-listings">
+		{{#if isEmployer}}
+			<a href="{{pathFor 'jobForm'}}">Create Job Listing</a>
+		{{/if}}
+
 		{{#each this}}
 			{{> job}}
 		{{/each}}
@@ -9,8 +13,8 @@
 
 <template name="job">
 	<div class="twelvecol job">
-		<p>jname: {{jname}}</p>
-		<p>title: {{title}}</p>
-		<p>description: {{description}}</p>
+		<p>Title: {{title}}</p>
+		<p>Description: {{description}}</p>
+		<p>Employer: {{employer}}</p>
 	</div>
 </template>

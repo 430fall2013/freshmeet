@@ -1,4 +1,7 @@
 <template name="home">
+	{{#if isLoggedIn}}
+		<h3>Logged In Homepage</h3>
+	{{else}}
 	<div class="row intro">
 		<h1>Welcome!</h1>
     <p>This is the best place for college students and recent graduates to connect with employers in their field. Sign up today and find the perfect fit for you!</p>
@@ -31,4 +34,5 @@
 			<a href="{{pathFor 'register'}}"><button class="join-now school-signup">Sign Up!</button></a>
 		</div>
 	</div>
+	{{/if}}
 </template>
