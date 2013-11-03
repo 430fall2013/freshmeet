@@ -34,6 +34,11 @@ Router.map(function() {
 		data: function() {return Jobs.find();},
 		waitOn: function() {return jobsHandle;}
 	});
+	this.route('job', {
+		path: '/jobs/:_id',
+		data: function() {return Jobs.findOne(this.params._id);},
+		waitOn: function() {return jobsHandle;}
+	});
 	this.route('jobForm');
 	this.route('dashboard', {
 		path: '/dashboard/:_id',

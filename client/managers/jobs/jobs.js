@@ -8,3 +8,20 @@ Template.jobs.helpers({
 		}
 	}
 });
+
+Template.job.events({
+	'click .apply': function() {
+		Meteor.call('applyToJob', this, Meteor.user());	
+	}
+});
+
+Template.job.helpers({
+	isStudent: function() {
+		if (Meteor.user().profile.type == 'Student') {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+});
