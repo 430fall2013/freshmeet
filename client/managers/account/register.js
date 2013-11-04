@@ -150,9 +150,21 @@ Template.registerForm.events({
 					}
 					else if (newProfile.acctType == 'Employer') {
 						Meteor.call('newEmployer', Meteor.user());
+						if(Companies.find({name: newProfile.company}).fetch().length != 1){
+							var company = {
+								name: newProfile.company
+							}
+							Meteor.call('newCompany', company);
+						}
 					}
 					else if (newProfile.acctType == 'Faculty') {
 						Meteor.call('newFaculty', Meteor.user());
+						if(Schools.find({name: newProfile.school}).fetch().length != 1){
+							var school = {
+								name: newProfile.school
+							}
+							Meteor.call('newSchool', school);
+						}
 
 					}
 					Router.go('dashboard', {_id: Meteor.user()._id});

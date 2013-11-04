@@ -1,6 +1,6 @@
 <template name="companies">
 	<h3>Companies</h3>
-	<div class="twelvcol company-listings">
+	<div class="twelvecol company-listings">
 		{{#each this}}
 			{{> company}}
 		{{/each}}
@@ -8,8 +8,8 @@
 </template>
 
 <template name="company">
-	<div class="twelvecol company">
+	<div class="company">
+		<img src="/images/school.jpg"/>
 		<p>{{name}}</p>
-		<p>{{description}}</p>
 	</div>
 </template>
