@@ -17,7 +17,20 @@ Template.edit.helpers({
 			default:
 				return Template.editStudentShowcase();
 		}
-	}
+	},
+	user: function() {
+		var id = Router._current.params._id;
+		var user = Meteor.users.findOne(id);
+		if (user.profile.type == ('Student')) {
+			return Students.findOne(id);
+		}
+		else if (user.profile.type == 'Employer') {
+			return Employers.findOne(id);
+		}
+		else if (user.profile.type == 'Faculty') {
+			return Faculty.findOne(id);
+		}
+	}	
 });
 
 
@@ -31,6 +44,14 @@ Template.edit.events({
 	'click .save': function(e) {
 		e.preventDefault();
 		console.log('save clicked');
+	},
+	'change #attachment': function(e) {
+		console.log(e.files);
+		image = e.files[0].url;
+		console.log(image);
+		Students.upsert(Meteor.user()._id, {$set: {profile: {
+			avatar: image
+		}}});
 	}
 });
 
@@ -59,4 +80,7 @@ Template.edit.rendered = function() {
 			$('.detail-nav li a:contains("Showcase")').addClass('active');
 			break;
 	}
+
+	filepicker.setKey("AV770eYXNT33KWqCkbV0Qz");
+	filepicker.constructWidget(document.getElementById('attachment'));
 }

@@ -47,8 +47,17 @@ Template.studentProfile.helpers({
 	},
 	user: function() {
 		var id = Router._current.params._id;
-		return Meteor.users.findOne(id);
-	}
+		var user = Meteor.users.findOne(id);
+		if (user.profile.type == ('Student')) {
+			return Students.findOne(id);
+		}
+		else if (user.profile.type == 'Employer') {
+			return Employers.findOne(id);
+		}
+		else if (user.profile.type == 'Faculty') {
+			return Faculty.findOne(id);
+		}
+	}		
 });
 
 Template.studentProfile.events({
