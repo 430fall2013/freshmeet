@@ -30,6 +30,7 @@ Template.edit.events({
 			lname: $('#lname').val(),
 			school: $('#school').val(),
 			major: $('#major').val(),
+			gpa: Number($('#gpa').val()),
 			avatar: student.profile.avatar,
 			type: 'Student',
 			gradYear: $('#grad-year').val(),

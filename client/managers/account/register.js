@@ -119,6 +119,7 @@ Template.registerForm.events({
 					type:  newProfile.acctType,
 					school: newProfile.school,
 					company: newProfile.company,
+					gpa: '0.0',
 					major: 'Add your major!',
 					avatar: '/images/placeholder.jpg',
 					gradYear: 'Add your graduation year!',
