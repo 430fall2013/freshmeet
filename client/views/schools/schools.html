@@ -1,0 +1,15 @@
+<template name="schools">
+	<h3>Schools</h3>
+	<div class="twelvecol school-listings">
+		{{#each this}}
+			{{> school}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="school">
+	<div class="school">
+		<img src="/images/school.jpg"/>
+		<p>{{name}}</p>
+	</div>
+</template>

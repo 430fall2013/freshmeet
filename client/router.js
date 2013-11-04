@@ -15,6 +15,11 @@ Router.map(function() {
 		data: function() {return Students.find();},
 		waitOn: function() {return studentsHandle;}
 	});
+	this.route('schools', {
+		path: '/schools',
+		data: function() {return Schools.find();},
+		waitOn: function() {return schoolsHandle;}
+	});
 	this.route('faculty', {
 		path: '/faculty',
 		data: function() {return Faculty.find();},
