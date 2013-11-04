@@ -4,27 +4,16 @@
 
 		{{{accountTypeDashboard}}}
 		
-
 	</div>
 </template>
 
 <template name="studentDashboard">
-
 	<div class="sixcol">
 		{{> studentData}}
 	</div>
-
-	<div class="sixcol">
-		<h1> filler text </h1>
-	</div>
-
-
 </template>
 
 <template name="recruiterDashboard">
-	<div class="sixcol">
-		{{> createJob}}
-	</div>
 
 	<div class="sixcol last">
 		{{> jobList}}
@@ -37,87 +26,14 @@
 	</div>
 </template>
 
-
-<template name="createJob">
-	<h2>Create Job/Intership Post</h2>
-	<label for="jname">Job/Internship Name</label>
-	<input type="text" name="jname" id="jname" />
-
-	<label for="title">Title</label>
-	<input type="text" name="title" id="title" />
-
-	<label for="description">Description</label>
-	<input type="text" name="description" id="description" />
-
-	<label for="expdate">Post Expiration Date</label>
-	<input type="text" name="expdate" id="expdate" />
-
-	<label for="major">Major</label>
-	<input type="text" name="major" id="major" />
-
-	<label for="skill1">Skill 1</label>
-	<input type="text" name="skill2" id="skill1" />
-
-	<label for="skill2">Skill 2</label>
-	<input type="text" name="skill2" id="skill2" />
-
-	<label for="skill3">Skill 3</label>
-	<input type="text" name="skill3" id="skill3" />
-
-	<label for"gpa">GPA</label>
-	<input type="number" name="gpa" id"gpa"/>
-
-	<label for"workExp">work exp</label>
-	<input type="number" name="workExp" id"workExp"/>
-	
-	<label for"extProj">external projects</label>
-	<input type="number" name="extProj" id"extProj"/>
-	
-	<label for"skills">skills</label>
-	<input type="number" name="skills" id"skills"/>
-
-	<label for"cLevel">class level</label>
-	<input type="number" name="cLevel" id"cLevel"/>
-
-	<button class="submit">POST!</button>
-</template>
-
 <template name="jobList">
 	<h1>Job/Internship List</h1>
 		{{#each populateJobsList}}
-			<p>jname: {{jname}} title: {{title}}</p>
+			<p>title: {{title}}</p>
 			<p>description: {{description}}</p>
 		{{/each}}
 </template>
 
 <template name="studentData">
-	<h2>Student Information *temp while edit profile is being built*</h2>
-	<label for="name">Name</label>
-	<input type="text" name="name" id="name" />
-
-	<label for="gpa">gpa</label>
-	<input type="text" name="gpa" id="gpa" />
-
-	<label for="cLevel">Class Level</label>
-	<input type="text" name="cLevel" id="cLevel" />
-
-	<label for="wExpSchool">Work Exp. School</label>
-	<input type="text" name="wExpSchool" id="wExpSchool" />
-
-	<label for="wExpBreak">Work Exp. Breaks</label>
-	<input type="text" name="wExpBreak" id="wExpBreak" />
-
-	<label for"extProj">External Projects</label>
-	<input type="number" name="extProj" id"extProj"/>
-
-	<label for="skill1">Skill 1</label>
-	<input type="text" name="skill1" id="skill1" />
-
-	<label for="skill2">Skill 2</label>
-	<input type="text" name="skill2" id="skill2" />
-
-	<label for="skill3">Skill 3</label>
-	<input type="text" name="skill3" id="skill3" />
-
-	<button class="submit">add info!</button>
+	<h2>Student Information</h2>
 </template>

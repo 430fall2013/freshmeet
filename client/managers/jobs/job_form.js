@@ -11,7 +11,8 @@ Template.jobForm.events({
 		var job = {
 			employer: user.profile.fname + user.profile.lname,
 			title: title,
-			description: description
+			description: description,
+			recruiterID: Meteor.user()._id
 		}
 
 		Meteor.call('newJobPosting', job);
