@@ -33,7 +33,7 @@
 					<li><a href="#">Contact</a></li>
 				</ul>
 				<div class="detail-section">
-					{{{detailSection}}}
+					{{{detailSection user}}}
 				</div>
 			</div>
 		</div>
@@ -105,7 +105,7 @@
 	<div class="showcase">
 		<div class="fivecol">
 		<h2>About Me</h2>
-			<p>{{user/profile/about}}</p>
+			<p>{{this/profile/about}}</p>
 		</div>
 		<div class="sevencol last">
 			<iframe src="//player.vimeo.com/video/76757058" width="510" height="287" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -116,93 +116,24 @@
 <template name="studentExperience">
 	<div class="experience">
 		<h2>Work Experience</h2>
-		<div class="twelvecol">
-			<h3>Google - Summer 2013</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, asperiores, mollitia, explicabo autem ipsa amet accusantium unde reiciendis corrupti quod sunt et beatae eaque nesciunt laudantium natus voluptatem neque sit.</p>
-		</div>
-		<div class="twelvecol">
-			<h3>Facebook - Summer 2012</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, corporis, expedita, excepturi, id repellendus ratione libero voluptatum obcaecati quis possimus maxime quisquam earum. Sapiente, dolor doloremque a cumque rem tempora!</p>
-		</div>
-		<div class="twelvecol">
-			<h3>Microsoft - Summer 2011</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, impedit rem earum temporibus iusto non laudantium repellat incidunt. Dignissimos, a sit consectetur quos ab voluptate quibusdam ad laboriosam odit labore!</p>
-		</div>
+		{{this/profile/workExperience}}
 	</div>
 </template>
 
 <template name="studentSchool">
 	<h2>School Experience</h2>
-	<div class="twelvecol">
-		<h3>Projects</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, odit et a! Soluta, totam, optio, voluptates natus ratione id officia doloribus ab nostrum molestias et neque obcaecati sint fugit sed.</p>
-	</div>
-	<div class="twelvecol">
-		<h3>Classes</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, aspernatur, neque, architecto placeat alias itaque optio facere eligendi minima iure odit fuga perspiciatis magni animi facilis adipisci eveniet. Quo, quis.</p>
-	</div>
-	<div class="twelvecol">
-		<h3>Clubs/Organizations</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, ex, perspiciatis nisi delectus amet adipisci quaerat tempore quod pariatur quibusdam doloremque suscipit ipsa perferendis. Optio enim corrupti veritatis odit quas!</p>
-	</div>
+	<p>Todo</p>
 </template>
 
 <template name="studentSkills">
     <h2>Skills</h2>
-               
-    <div class="twelvecol">
-            <!--filler format -->
-            <div class="threecol">
-                    <p>Java</p>
-                    <br>
-                    <p>C++</p>
-                    <br>
-                    <p>Python</p>
-                    <br>
-                    <p>HTML</p>
-                    <br>
-                    <p>JavaScript</p>
-            </div>
-            <div class="threecol">
-                    <p>C++</p>
-                    <br>
-                    <p>HTML</p>
-                    <br>
-                    <p>Java</p>
-                    <br>
-                    <p>JavaScript</p>
-                    <br>
-                    <p>Python</p>
-            </div>
-            <div class="threecol">
-                    <p>C++</p>
-                    <br>
-                    <p>Python</p>
-                    <br>
-                    <p>JavaScript</p>
-                    <br>
-                    <p>HTML</p>
-                    <br>
-                    <p>Java</p>
-            </div>
-            <div class="threecol last">
-                    <p>JavaScript</p>
-                    <br>
-                    <p>C++</p>
-                    <br>
-                    <p>Java</p>
-                    <br>
-                    <p>HTML</p>
-                    <br>
-                    <p>Python</p>
-            </div>
-    </div>
+    {{this/profile/skills}}
 </template>
 
 <template name="studentExtra">
 	<h2>Extra Information</h2>
 	<div class="twelvecol">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, illum, perspiciatis, quia eligendi amet animi impedit adipisci atque iste cum porro ex vero neque reiciendis sequi quisquam ipsam? In, dicta.</p>
+		<p>{{this/profile/externalExperience}}</p>
 	</div>
 </template>
 
@@ -219,13 +150,13 @@
                 <p>Website:</p>
             </div>
             <div class="fourcol">
-                <p>john.smith@email.com</p>
+                <p>{{this/profile/contactEmail}}</p>
                 <br>
-                <p>(123)456-7890</p>
+                <p>{{this/profile/phone}}</p>
                 <br>
-                <p>1234 Main Street</p>
+                <p>{{this/profile/address}}</p>
                 <br>
-                <p>www.mywebsite.com</p>
+                <p>{{this/profile/website}}</p>
             </div>
         </div>
 </template>

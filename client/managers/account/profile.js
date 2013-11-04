@@ -23,23 +23,23 @@ Template.profile.helpers({
 });
 
 Template.studentProfile.helpers({
-	detailSection: function() {
+	detailSection: function(user) {
 		section = Session.get('currentDetailSection');
 		switch (section) {
 			case 'Showcase':
-				return Template.studentShowcase();
+				return Template.studentShowcase(user);
 			case 'Experience':
-				return Template.studentExperience();
+				return Template.studentExperience(user);
 			case 'School':
-				return Template.studentSchool();
+				return Template.studentSchool(user);
 			case 'Skills':
-				return Template.studentSkills();
+				return Template.studentSkills(user);
 			case 'Extra':
-				return Template.studentExtra();
+				return Template.studentExtra(user);
 			case 'Contact':
-				return Template.studentContact();
+				return Template.studentContact(user);
 			default:
-				return Template.studentShowcase();
+				return Template.studentShowcase(user);
 		}
 	},
 	_id: function() {
