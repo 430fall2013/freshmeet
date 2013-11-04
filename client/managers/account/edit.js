@@ -33,7 +33,7 @@ Template.edit.events({
 			gpa: Number($('#gpa').val()),
 			avatar: student.profile.avatar,
 			type: 'Student',
-			gradYear: $('#grad-year').val(),
+			gradYear: Number($('#grad-year').val()),
 			about: $('#about').val(),
 			video: $('#video').val(),
 			workExperience: Number($('#work-experience').val()),
