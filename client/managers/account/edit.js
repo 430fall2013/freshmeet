@@ -1,23 +1,4 @@
 Template.edit.helpers({
-	resumeSection: function(user) {
-		section = Session.get('currentResumeSection');
-		switch (section) {
-			case 'Showcase':
-				return Template.editStudentShowcase(user);
-			case 'Experience':
-				return Template.editStudentExperience(user);
-			case 'School':
-				return Template.editStudentSchool(user);
-			case 'Skills':
-				return Template.editStudentSkills(user);
-			case 'Extra':
-				return Template.editStudentExtra(user);
-			case 'Contact':
-				return Template.editStudentContact(user);
-			default:
-				return Template.editStudentShowcase(user);
-		}
-	},
 	user: function() {
 		var id = Router._current.params._id;
 		var user = Meteor.users.findOne(id);
@@ -51,18 +32,18 @@ Template.edit.events({
 			major: $('#major').val(),
 			avatar: student.profile.avatar,
 			gradYear: $('#grad-year').val(),
-			about: 'about me!',
-			video: globalUgliness.video,
-			workExperience: globalUgliness.workExperience,
-			externalExperience: globalUgliness.externalExperience,
-			skills: globalUgliness.skills,
-			extra: globalUgliness.extra,
-			contactEmail: globalUgliness.contactEmail,
-			phone: globalUgliness.phone,
-			address: globalUgliness.address,
-			website: globalUgliness.website
+			about: $('#about').val(),
+			video: $('#video').val(),
+			workExperience: $('#work-experience').val(),
+			externalExperience: $('#external-experience').val(),
+			skills: $('#skills').val(),
+			contactEmail: $('#contact-email').val(),
+			phone: $('#phone').val(),
+			address: $('#address').val(),
+			website: $('#website').val()
 		};
 		Meteor.call('updateStudent', student, data);
+		Router.go('profile', {_id: Router._current.params._id});
 	},
 	'change #attachment': function(e) {
 		console.log(e.files);

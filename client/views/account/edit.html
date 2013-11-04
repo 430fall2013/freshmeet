@@ -6,22 +6,65 @@
 				<img src="{{user/profile/avatar}}" alt="student"/>
 				<input type="filepicker" id="attachment">
 			</div>
-			<div class="eightcol last">
+			<div class="eightcol last edit-fields">
 				<h3>Welcome {{emails/0/address}}!</h3>
 				<ul>
-					<li><input type="text" placeholder="first name" id="fname" value="{{user/profile/fname}}"> <input type="text" placeholder="last name" id="lname" value="{{user/profile/lname}}"></li>
-					<li><input type="text" placeholder="school" id="school" value="{{user/profile/school}}"></li>
-					<li><input type="text" placeholder="major" id="major" value="{{user/profile/major}}"></li>
-					<li><input type="text" placeholder="graduation year" id="grad-year" value="{{user/profile/gradYear}}"></li>
-					<li><textarea id="about">{{user/profile/about}}</textarea></li>
-					<li><input type="text" placeholder="video embed code" id="video" value="{{user/profile/video}}"></li>
-					<li><input type="text" placeholder="hours worked" id="work-experience" value="{{user/profile/workExperience}}"></li>
-				    <li><input type="text" placeholder="skills" id="skills" value="{{user/profile/skills}}"></li>
-					<li><input type="text" placeholder="hours on external projects" id="external-experience" value="{{user/profile/externalExperience}}"></li>
-			        <li><input type="text" placeholder="email" id="contact-email" value="{{user/profile/contactEmail}}"></li>
-			        <li><input type="text" placeholder="phone" id="phone" value="{{user/profile/phone}}"></li>
-			        <li><input type="text" placeholder="address" id="address" value="{{user/profile/address}}"></li>
-			        <li><input type="text" placeholder="website" id="website" value="{{user/profile/website}}"></li>
+					<li>
+						<label for="fname">First Name</label>
+						<input type="text" placeholder="first name" id="fname" value="{{user/profile/fname}}"> 
+					</li>
+					<li>
+						<label for="lname">Last Name</label>
+						<input type="text" placeholder="last name" id="lname" value="{{user/profile/lname}}">
+					</li>
+					<li>
+						<label for="school">School Name</label>
+						<input type="text" placeholder="school" id="school" value="{{user/profile/school}}">
+					</li>
+					<li>
+						<label for="major">Major</label>
+						<input type="text" placeholder="major" id="major" value="{{user/profile/major}}">
+					</li>
+					<li>
+						<label for="grad-year">Graduation Year</label>
+						<input type="text" placeholder="graduation year" id="grad-year" value="{{user/profile/gradYear}}">
+					</li>
+					<li>
+						<label for="about">About</label>
+						<textarea id="about">{{user/profile/about}}</textarea>
+					</li>
+					<li>
+						<label for="video">Video Embed Code</label>
+						<input type="text" placeholder="video embed code" id="video" value="{{user/profile/video}}">
+					</li>
+					<li>
+						<label for="work-experience">Hours Worked</label>
+						<input type="text" placeholder="hours worked" id="work-experience" value="{{user/profile/workExperience}}">
+					</li>
+				    <li>
+				    	<label for="skills">Skills</label>
+				    	<input type="text" placeholder="skills" id="skills" value="{{user/profile/skills}}">
+				    </li>
+					<li>
+						<label for="external-experience">Hours Spent on External Projects</label>
+						<input type="text" placeholder="hours on external projects" id="external-experience" value="{{user/profile/externalExperience}}">
+					</li>
+			        <li>
+				        <label for="contact-email">Contact Email</label>
+			        	<input type="text" placeholder="email" id="contact-email" value="{{user/profile/contactEmail}}">
+			        </li>
+			        <li>
+			        	<label for="phone">Phone</label>
+			        	<input type="text" placeholder="phone" id="phone" value="{{user/profile/phone}}">
+			        </li>
+			        <li>
+			        	<label for="address">Address</label>
+			        	<input type="text" placeholder="address" id="address" value="{{user/profile/address}}">
+			        </li>
+			        <li>
+			        	<label for="website">Website</label>
+				        <input type="text" placeholder="website" id="website" value="{{user/profile/website}}">
+			        </li>
 
 				</ul>
 			</div>
