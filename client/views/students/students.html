@@ -9,7 +9,7 @@
 
 <template name="student">
 	<div class="student">
-		<img src="/images/student.jpg"/>
+		<img src="{{profile/avatar}}"/>
 		<p><a href="{{pathFor 'profile' _id=_id}}">{{profile/fname}} {{profile/lname}}</a></p>
 		<p>Computer Science</p>
 	</div>

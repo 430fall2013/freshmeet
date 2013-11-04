@@ -1,6 +1,6 @@
 Template.jobs.helpers({
 	isEmployer: function() {
-		if (Meteor.user().profile.type == 'Employer') {
+		if (Meteor.user() && Meteor.user().profile.type == 'Employer') {
 			return true;
 		}
 		else {
@@ -18,7 +18,7 @@ Template.job.events({
 
 Template.job.helpers({
 	isStudent: function() {
-		if (Meteor.user().profile.type == 'Student') {
+		if (Meteor.user() && Meteor.user().profile.type == 'Student') {
 			return true;
 		}
 		else {
