@@ -31,6 +31,7 @@ Template.edit.events({
 			school: $('#school').val(),
 			major: $('#major').val(),
 			avatar: student.profile.avatar,
+			type: 'Student',
 			gradYear: $('#grad-year').val(),
 			about: $('#about').val(),
 			video: $('#video').val(),

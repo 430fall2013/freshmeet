@@ -118,7 +118,19 @@ Template.registerForm.events({
 					lname: newProfile.lname,
 					type:  newProfile.acctType,
 					school: newProfile.school,
-					company: newProfile.company
+					company: newProfile.company,
+					major: 'Add your major!',
+					avatar: '/images/placeholder.jpg',
+					gradYear: 'Add your graduation year!',
+					about: 'Add a description!',
+					video: 'default',
+					workExperience: 'Add some work experience!',
+					externalExperience: 'Add some external project experience!',
+					skills: 'Add some skills!',
+					contactEmail: 'Add a contact email!',
+					phone: 'Add a phone number!',
+					address: 'Add an address!',
+					website:'Add a website!'
 				}
 			}, function (error) {
 				if (error) {
@@ -136,7 +148,7 @@ Template.registerForm.events({
 					else if (newProfile.acctType == 'Faculty') {
 						Meteor.call('newFaculty', Meteor.user());
 					}
-					Router.go('dashboard');
+					Router.go('dashboard', {_id: Meteor.user()._id});
 				}
 			});
 		}
