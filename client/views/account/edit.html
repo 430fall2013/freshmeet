@@ -9,77 +9,22 @@
 			<div class="eightcol last">
 				<h3>Welcome {{emails/0/address}}!</h3>
 				<ul>
-					<li><input type="text" placeholder="first name"> <input type="text" placeholder="last name"></li>
-					<li><input type="text" placeholder="school"></li>
-					<li><input type="text" placeholder="major"></li>
-					<li><input type="text" placeholder="graduation year"></li>
+					<li><input type="text" placeholder="first name" id="fname" value="{{user/profile/fname}}"> <input type="text" placeholder="last name" id="lname" value="{{user/profile/lname}}"></li>
+					<li><input type="text" placeholder="school" id="school" value="{{user/profile/school}}"></li>
+					<li><input type="text" placeholder="major" id="major" value="{{user/profile/major}}"></li>
+					<li><input type="text" placeholder="graduation year" id="grad-year" value="{{user/profile/gradYear}}"></li>
+					<li><textarea id="about">{{user/profile/about}}</textarea></li>
+					<li><input type="text" placeholder="video embed code" id="video" value="{{user/profile/video}}"></li>
+					<li><input type="text" placeholder="hours worked" id="work-experience" value="{{user/profile/workExperience}}"></li>
+				    <li><input type="text" placeholder="skills" id="skills" value="{{user/profile/skills}}"></li>
+					<li><input type="text" placeholder="hours on external projects" id="external-experience" value="{{user/profile/externalExperience}}"></li>
+			        <li><input type="text" placeholder="email" id="contact-email" value="{{user/profile/contactEmail}}"></li>
+			        <li><input type="text" placeholder="phone" id="phone" value="{{user/profile/phone}}"></li>
+			        <li><input type="text" placeholder="address" id="address" value="{{user/profile/address}}"></li>
+			        <li><input type="text" placeholder="website" id="website" value="{{user/profile/website}}"></li>
+
 				</ul>
 			</div>
 		</div>
-		<div class="detail row">
-			<div class="twelvecol">
-				<ul class="detail-nav">
-					<li><a href="#">Showcase</a></li>
-					<li><a href="#">Experience</a></li>
-					<li><a href="#">School</a></li>
-					<li><a href="#">Skills</a></li>
-					<li><a href="#">Extra</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-				<div class="resume-section">
-					{{{resumeSection}}}
-				</div>
-			</div>
-		</div>
 	</div>
-</template>
-
-<template name="editStudentShowcase">
-	<div class="showcase">
-		<div class="fivecol">
-			<h2>About Me</h2>
-			<textarea></textarea>
-		</div>
-		<div class="sevencol last">
-			<input type="text" placeholder="video embed code">
-		</div>
-	</div>
-</template>
-
-<template name="editStudentExperience">
-	<div class="experience">
-		<h2>Work Experience</h2>
-		<input type="text" placeholder="company">
-		<input type="text" placeholder="title">
-		<input type="text" placeholder="description">
-		<button>+</button>
-	</div>
-</template>
-
-<template name="editStudentSchool">
-	<h2>School Experience</h2>
-    <input type="text" placeholder="title">
-    <input type="text" placeholder="description">
-    <button>+</button>
-</template>
-
-<template name="editStudentSkills">
-    <h2>Skills</h2>
-    <input type="text" placeholder="skills">
-    <button>+</button>
-</template>
-
-<template name="editStudentExtra">
-	<h2>Extra Information</h2>
-	<textarea></textarea>
-</template>
-
-<template name="editStudentContact">
-    <h2>Contact Information</h2>        
-    <div class="twelvecol">
-        <input type="text" placeholder="email">
-        <input type="text" placeholder="phone">
-        <input type="text" placeholder="address">
-        <input type="text" placeholder="website">
-    </div>
 </template>

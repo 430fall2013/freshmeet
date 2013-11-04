@@ -16,8 +16,8 @@
 				<h3>Welcome {{user/profile/fname}} {{user/profile/lname}}!</h3>
 				<ul>
 					<li>{{user/emails/0/address}}</li>
-					<li>California State University, Chico</li>
-					<li>Computer Science, May 2016</li>
+					<li>{{user/profile/school}}</li>
+					<li>{{user/profile/major}}, {{user/profile/gradYear}}</li>
 					<li>Account Type: {{user/profile/type}}</li>
 				</ul>
 			</div>
@@ -105,7 +105,7 @@
 	<div class="showcase">
 		<div class="fivecol">
 		<h2>About Me</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, voluptatum, odio quis repellat modi cumque quidem aperiam iusto quaerat at ea alias animi nostrum neque molestiae natus cupiditate rem ab. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veniam, officiis, dolorem, sequi dignissimos mollitia rerum magnam maxime est non dicta nam repellendus!</p>
+			<p>{{user/profile/about}}</p>
 		</div>
 		<div class="sevencol last">
 			<iframe src="//player.vimeo.com/video/76757058" width="510" height="287" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

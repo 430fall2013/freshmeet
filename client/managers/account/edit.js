@@ -1,21 +1,21 @@
 Template.edit.helpers({
-	resumeSection: function() {
+	resumeSection: function(user) {
 		section = Session.get('currentResumeSection');
 		switch (section) {
 			case 'Showcase':
-				return Template.editStudentShowcase();
+				return Template.editStudentShowcase(user);
 			case 'Experience':
-				return Template.editStudentExperience();
+				return Template.editStudentExperience(user);
 			case 'School':
-				return Template.editStudentSchool();
+				return Template.editStudentSchool(user);
 			case 'Skills':
-				return Template.editStudentSkills();
+				return Template.editStudentSkills(user);
 			case 'Extra':
-				return Template.editStudentExtra();
+				return Template.editStudentExtra(user);
 			case 'Contact':
-				return Template.editStudentContact();
+				return Template.editStudentContact(user);
 			default:
-				return Template.editStudentShowcase();
+				return Template.editStudentShowcase(user);
 		}
 	},
 	user: function() {
@@ -37,13 +37,32 @@ Template.edit.helpers({
 Template.edit.events({
 	'click .detail-nav li a': function(e) {
 		e.preventDefault();
-
+		
 		//sets value of current section to button text
 		Session.set('currentResumeSection', $(e.target).text());
 	},
 	'click .save': function(e) {
 		e.preventDefault();
-		console.log('save clicked');
+		var student = Students.findOne(Meteor.user()._id);
+		var data = {
+			fname: $('#fname').val(),
+			lname: $('#lname').val(),
+			school: $('#school').val(),
+			major: $('#major').val(),
+			avatar: student.profile.avatar,
+			gradYear: $('#grad-year').val(),
+			about: 'about me!',
+			video: globalUgliness.video,
+			workExperience: globalUgliness.workExperience,
+			externalExperience: globalUgliness.externalExperience,
+			skills: globalUgliness.skills,
+			extra: globalUgliness.extra,
+			contactEmail: globalUgliness.contactEmail,
+			phone: globalUgliness.phone,
+			address: globalUgliness.address,
+			website: globalUgliness.website
+		};
+		Meteor.call('updateStudent', student, data);
 	},
 	'change #attachment': function(e) {
 		console.log(e.files);
@@ -80,6 +99,8 @@ Template.edit.rendered = function() {
 			$('.detail-nav li a:contains("Showcase")').addClass('active');
 			break;
 	}
+	//have to use global variab to get data from 'detail' sections
+	globalUgliness = {};
 
 	filepicker.setKey("AV770eYXNT33KWqCkbV0Qz");
 	filepicker.constructWidget(document.getElementById('attachment'));
