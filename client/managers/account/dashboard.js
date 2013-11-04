@@ -30,6 +30,7 @@ Template.createJob.events({
 			extProj: $('#extProj').val(),
 			skills: $('#skills').val(),
 			cLevel: $('#cLevel').val(),
+			company: Meteor.user().profile.company,
 			recruiterID: Meteor.user()._id
 		}
 
@@ -77,7 +78,7 @@ Template.createJob.events({
 
 Template.jobList.helpers({
 	populateJobsList: function() {
-		return Jobs.find();
+		return Jobs.find({recruiterID: Meteor.user()._id});
 	}
 });
 

@@ -64,7 +64,6 @@ Template.registerForm.events({
 			confirm: $('#confirm').val(),
 			acctType: Session.get('registerType'),
 			emailRegEx: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-			
 			}
 
 		var errorFlag = false;
@@ -142,12 +141,19 @@ Template.registerForm.events({
 					console.log('Success');
 					if (newProfile.acctType == 'Student') {	
 						Meteor.call('newStudent', Meteor.user());
+						if(Schools.find({name: newProfile.school}).fetch().length != 1){
+							var school = {
+								name: newProfile.school
+							}
+							Meteor.call('newSchool', school);
+						}
 					}
 					else if (newProfile.acctType == 'Employer') {
 						Meteor.call('newEmployer', Meteor.user());
 					}
 					else if (newProfile.acctType == 'Faculty') {
 						Meteor.call('newFaculty', Meteor.user());
+
 					}
 					Router.go('dashboard', {_id: Meteor.user()._id});
 				}

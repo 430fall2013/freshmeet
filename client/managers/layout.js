@@ -27,6 +27,9 @@ Template.nav.rendered = function() {
 	else if (path == '/students') {
 		$('.nav li a:contains("Students")').addClass('active');
 	}
+	else if (path == '/schools') {
+		$('.nav li a:contains("Schools")').addClass('active');
+	}
 	else if (path == '/companies') {
 		$('.nav li a:contains("Companies")').addClass('active');
 	}

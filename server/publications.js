@@ -21,3 +21,7 @@ Meteor.publish('companies', function() {
 Meteor.publish('jobs', function() {
 	return Jobs.find();
 });
+
+Meteor.publish('schools', function() {
+	return Schools.find();
+});
