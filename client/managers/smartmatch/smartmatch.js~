@@ -1,0 +1,19 @@
+Template.smartmatch.helpers({
+	rankedStudents: function() {
+		var students = Students.find().fetch();
+		var jobs = Jobs.find().fetch();
+		var ranked = [];
+
+		for(var i=0; i < students.length; i++) {
+			console.log(students[i].profile.fname);
+      console.log(jobs[i]);
+			//ranked.push(students[i]);
+		}
+
+    //console.log(ranked);
+
+// begin algorithm
+
+		return ranked;
+	}	
+});
