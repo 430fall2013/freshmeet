@@ -9,7 +9,6 @@
 
 <template name="school">
 	<div class="school">
-		<img src="/images/school.jpg"/>
-		<p>{{name}}</p>
+		Name: <a href="{{pathFor 'school' _id=this/_id}}">{{name}}</a>
 	</div>
 </template>
