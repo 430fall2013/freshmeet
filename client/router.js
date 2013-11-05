@@ -10,15 +10,11 @@ Router.map(function() {
 	this.route('login');
 	this.route('contact');
 	this.route('jobDetails');
+	this.route('schoolDetails');
 	this.route('students', {
 		path: '/students',
 		data: function() {return Students.find();},
 		waitOn: function() {return studentsHandle;}
-	});
-	this.route('schools', {
-		path: '/schools',
-		data: function() {return Schools.find();},
-		waitOn: function() {return schoolsHandle;}
 	});
 	this.route('faculty', {
 		path: '/faculty',
@@ -39,6 +35,16 @@ Router.map(function() {
 		path: '/jobs',
 		data: function() {return Jobs.find();},
 		waitOn: function() {return jobsHandle;}
+	});
+	this.route('schools', {
+		path: '/schools',
+		data: function() {return Schools.find();},
+		waitOn: function() {return schoolsHandle;}
+	});
+	this.route('school', {
+		path: '/schools/:_id',
+		data: function() {return Schools.findOne(this.params._id);},
+		waitOn: function() {return schoolsHandle;}
 	});
 	this.route('job', {
 		path: '/jobs/:_id',
