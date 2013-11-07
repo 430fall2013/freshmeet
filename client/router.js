@@ -31,6 +31,11 @@ Router.map(function() {
 		data: function() {return Companies.find();},
 		waitOn: function() {return companiesHandle;}
 	});
+	this.route('company', {
+		path: '/companies/:_id',
+		data: function() {return Companies.findOne(this.params._id);},
+		waitOn: function() {return companiesHandle;}
+	});
 	this.route('jobs', {
 		path: '/jobs',
 		data: function() {return Jobs.find();},

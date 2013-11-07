@@ -1,5 +1,5 @@
 <template name="companies">
-	<h3>Companies</h3>
+	<h3>Schools</h3>
 	<div class="twelvecol company-listings">
 		{{#each this}}
 			{{> company}}
@@ -9,7 +9,6 @@
 
 <template name="company">
 	<div class="company">
-		<img src="/images/school.jpg"/>
-		<p>{{name}}</p>
+		Name: <a href="{{pathFor 'company' _id=this/_id}}">{{name}}</a>
 	</div>
 </template>
