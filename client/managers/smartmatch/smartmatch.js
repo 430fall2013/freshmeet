@@ -126,8 +126,7 @@ var calcPercent = function(student, job) {
 
 for (var i = 0; i < students.length; i++) {
   for (var j = 0; j < jobPostings.length; j++) {
-  ranked.push("||" + students[i].profile.fname + " -> job " + j  + ":");
-  ranked.push(((calcPercent(students[i], jobPostings[j]))*100).toFixed(2));
+  ranked.push("||" + students[i].profile.fname + " -> job " + j  + ": " + ((calcPercent(students[i], jobPostings[j]))*100).toFixed(2) + "%");
   //console.log(calcPercent(students[i], jobPostings[j]));
   };
 };

@@ -51,9 +51,9 @@ Template.edit.events({
 		console.log(e.files);
 		image = e.files[0].url;
 		console.log(image);
-		Students.upsert(Meteor.user()._id, {$set: {profile: {
-			avatar: image
-		}}});
+		Students.update(Meteor.user()._id, {$set: {
+			'profile.avatar': image
+		}});
 	}
 });
 

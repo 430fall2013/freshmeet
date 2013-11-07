@@ -1,5 +1,5 @@
 Template.register.rendered = function() {
-	$('#radio').buttonset();
+    // $('#radio').buttonset();
 	var type = Session.get('registerType');
 	if (type == 'Student') {
 		$('#radio1').click();
