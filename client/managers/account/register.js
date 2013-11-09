@@ -143,6 +143,7 @@ Template.registerForm.events({
 						Meteor.call('newStudent', Meteor.user());
 						//var schoolDocument = Schools.find({name: newProfile.school});
 						if(Schools.find({name: newProfile.school}).fetch().length != 1){
+							//is there a cleaner way to do this?
 							var usersArray = new Array();
 							var school = {
 								name: newProfile.school,
@@ -152,7 +153,6 @@ Template.registerForm.events({
 							Meteor.call('newSchool', school);
 							
 							//Schools.update({_id: school2._id}, {$set: {users: Meteor.user()}});
-							console.log('made it here');
 							
 							//Meteor.call('joinExistingSchool', Schools.find({name: newProfile.school}), Meteor.user());
 							//Schools.update({name: newProfile.school}, {$set: {users: Meteor.user()}});
@@ -160,26 +160,43 @@ Template.registerForm.events({
 						}
 						else {
 							var schoolDocument = Schools.findOne({name: newProfile.school});
-							Schools.update({_id: schoolDocument._id} , {$push: {users: Meteor.user()}});
+							//push can only be used to add to an already existed array
+							//if no array exists, one will be created (a new array should never be created here)
+							Schools.update({_id: schoolDocument._id}, {$push: {users: Meteor.user()}});
 						}
 					}
 					else if (newProfile.acctType == 'Employer') {
 						Meteor.call('newEmployer', Meteor.user());
 						if(Companies.find({name: newProfile.company}).fetch().length != 1){
+							var usersArray = new Array();
 							var company = {
-								name: newProfile.company
+								name: newProfile.company,
+								users: usersArray
 							}
+							company.users[0] = Meteor.user();
 							Meteor.call('newCompany', company);
+						}
+						else {
+							var companyDocument = Companies.findOne({name: newProfile.company});
+							Companies.update({_id: companyDocument._id}, {$push: {users: Meteor.user()}});
 						}
 					}
 					else if (newProfile.acctType == 'Faculty') {
 						Meteor.call('newFaculty', Meteor.user());
 						if(Schools.find({name: newProfile.school}).fetch().length != 1){
+							var usersArray = new Array();
 							var school = {
-								name: newProfile.school
+								name: newProfile.school,
+								users: usersArray
 							}
+							school.users[0] = Meteor.user();
 							Meteor.call('newSchool', school);
 						}
+						else {
+							var schoolDocument = Schools.findOne({name: newProfile.school});
+							Schools.update({_id: schoolDocument._id}, {$push: {users: Meteor.user()}});
+						}
+
 
 					}
 					Router.go('dashboard', {_id: Meteor.user()._id});
