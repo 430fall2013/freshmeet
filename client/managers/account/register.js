@@ -141,11 +141,26 @@ Template.registerForm.events({
 					console.log('Success');
 					if (newProfile.acctType == 'Student') {	
 						Meteor.call('newStudent', Meteor.user());
+						//var schoolDocument = Schools.find({name: newProfile.school});
 						if(Schools.find({name: newProfile.school}).fetch().length != 1){
+							var usersArray = new Array();
 							var school = {
-								name: newProfile.school
+								name: newProfile.school,
+								users: usersArray
 							}
+							school.users[0] = Meteor.user();
 							Meteor.call('newSchool', school);
+							
+							//Schools.update({_id: school2._id}, {$set: {users: Meteor.user()}});
+							console.log('made it here');
+							
+							//Meteor.call('joinExistingSchool', Schools.find({name: newProfile.school}), Meteor.user());
+							//Schools.update({name: newProfile.school}, {$set: {users: Meteor.user()}});
+							//Schools.update({_id: this._id}, {$set: {users: Meteor.user()}});
+						}
+						else {
+							var schoolDocument = Schools.findOne({name: newProfile.school});
+							Schools.update({_id: schoolDocument._id} , {$push: {users: Meteor.user()}});
 						}
 					}
 					else if (newProfile.acctType == 'Employer') {
