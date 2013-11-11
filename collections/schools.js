@@ -12,3 +12,5 @@ Meteor.methods({
 			return Schools.upsert(school, {$addToSet: {faculty: user}});
 	}
 });
+
+

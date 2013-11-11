@@ -10,7 +10,6 @@ Router.map(function() {
 	this.route('login');
 	this.route('contact');
 	this.route('jobDetails');
-	this.route('schoolDetails');
 	this.route('students', {
 		path: '/students',
 		data: function() {return Students.find();},
@@ -46,7 +45,7 @@ Router.map(function() {
 		data: function() {return Schools.find();},
 		waitOn: function() {return schoolsHandle;}
 	});
-	this.route('school', {
+	this.route('schoolDetails', {
 		path: '/schools/:_id',
 		data: function() {return Schools.findOne(this.params._id);},
 		waitOn: function() {return schoolsHandle;}

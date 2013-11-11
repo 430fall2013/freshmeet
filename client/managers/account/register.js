@@ -147,9 +147,9 @@ Template.registerForm.events({
 							var usersArray = new Array();
 							var school = {
 								name: newProfile.school,
-								users: usersArray
+								studentMembers: usersArray
 							}
-							school.users[0] = Meteor.user();
+							school.studentMembers[0] = Meteor.user();
 							Meteor.call('newSchool', school);
 							
 							//Schools.update({_id: school2._id}, {$set: {users: Meteor.user()}});
@@ -162,7 +162,7 @@ Template.registerForm.events({
 							var schoolDocument = Schools.findOne({name: newProfile.school});
 							//push can only be used to add to an already existed array
 							//if no array exists, one will be created (a new array should never be created here)
-							Schools.update({_id: schoolDocument._id}, {$push: {users: Meteor.user()}});
+							Schools.update({_id: schoolDocument._id}, {$push: {studentMembers: Meteor.user()}});
 						}
 					}
 					else if (newProfile.acctType == 'Employer') {
@@ -171,14 +171,14 @@ Template.registerForm.events({
 							var usersArray = new Array();
 							var company = {
 								name: newProfile.company,
-								users: usersArray
+								employerMembers: usersArray
 							}
-							company.users[0] = Meteor.user();
+							company.employerMembers[0] = Meteor.user();
 							Meteor.call('newCompany', company);
 						}
 						else {
 							var companyDocument = Companies.findOne({name: newProfile.company});
-							Companies.update({_id: companyDocument._id}, {$push: {users: Meteor.user()}});
+							Companies.update({_id: companyDocument._id}, {$push: {employerMembers: Meteor.user()}});
 						}
 					}
 					else if (newProfile.acctType == 'Faculty') {
@@ -187,14 +187,14 @@ Template.registerForm.events({
 							var usersArray = new Array();
 							var school = {
 								name: newProfile.school,
-								users: usersArray
+								facultyMembers: usersArray
 							}
-							school.users[0] = Meteor.user();
+							school.facultyMembers[0] = Meteor.user();
 							Meteor.call('newSchool', school);
 						}
 						else {
 							var schoolDocument = Schools.findOne({name: newProfile.school});
-							Schools.update({_id: schoolDocument._id}, {$push: {users: Meteor.user()}});
+							Schools.update({_id: schoolDocument._id}, {$push: {facultyMembers: Meteor.user()}});
 						}
 
 
