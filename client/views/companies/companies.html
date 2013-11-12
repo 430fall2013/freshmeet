@@ -9,6 +9,54 @@
 
 <template name="company">
 	<div class="company">
-		Name: <a href="{{pathFor 'company' _id=this/_id}}">{{name}}</a>
+		Name: <a href="{{pathFor 'companyDetails' _id=this/_id}}">{{name}}</a>
+
 	</div>
+</template>
+
+<template name="companyDetails">
+    <div class="profile">
+        <div class="info row">
+            <h3>Name: {{name}}</h3>
+        </div>
+        <div class="detail row">
+            <div class="twelvecol">
+                <ul class="detail-nav">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Employers</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Internships</a></li>
+                    <li><a href="#">Calendar</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="detail-section">
+                    {{{detailSection school}}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="companyAbout">
+    <h1> about </h1>
+</template>
+
+<template name="companyEmployers">
+	<h1>list of employers... </h1>
+</template>
+
+<template name="companyJobs">
+    <h1>list of jobs</h1>
+</template>
+
+<template name="companyInternships">
+    <h1>list of companies</h1>
+</template>
+
+<template name="companyCalendar">
+    <h1>company calendar</h1>
+</template>
+
+<template name="companyContact">
+    <h1>contact info</h1>
 </template>
