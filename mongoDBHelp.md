@@ -8,7 +8,7 @@ HOW TO ADD LIST OF UNIVERSITES TO MONGODB:
 
     meteor run
     
-3) In 2nd terminal type in 'meteor mongo', this will allow you to use the mongo shell.  when you get access to the shell take note of the ip address and port number after connecting (mine is ip:127.0.0.1 port:3002)
+3) In 2nd terminal navigate to freshmeet directory and type in 'meteor mongo', this will allow you to use the mongo shell.  when you get access to the shell take note of the ip address and port number after connecting (mine is ip:127.0.0.1 port:3002)
 
     meteor mongo
     
