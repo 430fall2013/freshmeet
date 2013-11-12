@@ -15,94 +15,61 @@
 </template>
 
 <template name="schoolDetails">
-	<p>Name: {{name}}</p>
-	<p>{{school5}}</p>
-</template>
-
-<template name="school5">
-    <div class="twelvecol">
-        <div class="threecol">
-            <img src="/images/csucWildcat.jpg">         
+    <div class="profile">
+        <div class="info row">
+            <h3>Name: {{name}}</h3>
         </div>
-        <div class="ninecol last">
-            <h1>California State University, Chico</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, at voluptates eaque atque culpa maiores maxime doloremque voluptatibus repellat dicta tempora fugit expedita saepe perferen<p>
-        </div>
-    </div>
-    <div class="twelvecol">
-        <div class="row join-row">
-            <div class="twocol">
-                <button class="join-now ecc-button">ECC</button></a>
-            </div>
-            <div class="twocol">
-                <button class="join-now agriculture-button">Agriculture</button></a>
-            </div>
-            <div class="twocol">
-                <button class="join-now business-button">Business</button></a>
-            </div>
-            <div class="twocol">
-                <button class="join-now sciences-button">Sciences</button></a>
-            </div>
-            <div class="twocol">
-                <button class="join-now education-button">Education</button></a>
-            </div>
-            <div class="twocol last">
-                <button class="join-now humanities-button">Humanities</button></a>
+        <div class="detail row">
+            <div class="twelvecol">
+                <ul class="detail-nav">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Colleges</a></li>
+                    <li><a href="#">Students</a></li>
+                    <li><a href="#">Faculty</a></li>
+                    <li><a href="#">Calendar</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="detail-section">
+                    {{{detailSection school}}}
+                </div>
             </div>
         </div>
     </div>
-
-    
-        {{> eccSection}}
-    
-    
-    {{#if isAgriculture}}
-        {{> agricultureSection}}
-    {{/if}}
-    {{#if isBusiness}}
-        {{> businessSection}}
-    {{/if}}
-    {{#if isSciences}}
-        {{> sciencesSection}}
-    {{/if}}
-    {{#if isEducation}}
-        {{> educationSection}}
-    {{/if}}
-    {{#if isHumanities}}
-        {{> humanitiesSection}}
-    {{/if}}
-
 </template>
 
-<template name="eccSection">
-    <div class="twelvecol">
+<template name="schoolAbout">
+    
+</template>
+
+<template name="schoolColleges">
+<div class="twelvecol">
         <div class="twelvecol">
             <div class="twelvecol">
                 <div class="fourcol">
-                	<img src="/images/computer.png" alt="computer"/>
+                    <img src="/images/computer.png" alt="computer"/>
                 </div>
                     <div class="eightcol last">
                         <h3>Computer Science</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, debitis commodi totam nulla unde veritatis eius quo adipisci itaque facilis labore nostrum nesciunt animi nihil provident libero vel iure recusandae.</p>
                         <p><a href="http://csci.ecst.csuchico.edu">CSUC Computer Science Website</a></p>
                     </div>
-            	</div>
+                </div>
                 <div class="twelvecol">
                     <div class="fourcol">
                         <button>Donate Now!</button></a>
-                	</div>
+                    </div>
                 </div>
             </div>
 
             <div class="twelvecol">
-            	<div class="twelvecol">
+                <div class="twelvecol">
                     <div class="eightcol">
                         <h3>Computer Engineering</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, debitis commodi totam nulla unde veritatis eius quo adipisci itaque facilis labore nostrum nesciunt animi nihil provident libero vel iure recusandae.</p>
                         <p><a href="http://www.csuchico.edu/eece/">CSUC Computer Engineering Website</a></p>
                     </div>
                     <div class="fourcol last">
-                    	<img src="/images/comp_eng.jpg" alt="computer engineering"/>
+                        <img src="/images/comp_eng.jpg" alt="computer engineering"/>
                     </div>
                 </div>
                 <div class="twelvecol">
@@ -133,21 +100,21 @@
                     <div class="twelvecol">
                         <div class="eightcol">
                             <h3>Civil Engineering</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, debitis commodi totam nulla unde 		veritatis eius quo adipisci itaque facilis labore nostrum nesciunt animi nihil provident libero vel iure recusandae.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, debitis commodi totam nulla unde        veritatis eius quo adipisci itaque facilis labore nostrum nesciunt animi nihil provident libero vel iure recusandae.</p>
                             <p><a href="http://www.csuchico.edu/ce/">CSUC Civil Engineering Website</a></p>
                         </div>
-                    	<div class="fourcol last">
-                    		<img src="/images/bridge.png" alt="civil"/>
-                    	</div>
+                        <div class="fourcol last">
+                            <img src="/images/bridge.png" alt="civil"/>
+                        </div>
                     </div>
                     <div class="twelvecol">
                         <div class="eightcol">
-                    	</div>
+                        </div>
                         <div class="fourcol last">
                             <button>Donate Now!</button></a>
-                    	</div>
-                	</div>
-            	</div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="twelvecol">
                     <div class="twelvecol">
@@ -169,7 +136,7 @@
                     <div class="twelvecol">
                         <div class="eightcol">
                             <h3>Mechatronic Engineering</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, debitis commodi totam nulla unde 	veritatis eius quo adipisci itaque facilis labore nostrum nesciunt animi nihil provident libero vel iure recusandae.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, debitis commodi totam nulla unde    veritatis eius quo adipisci itaque facilis labore nostrum nesciunt animi nihil provident libero vel iure recusandae.</p>
                             <p><a href="http://www.csuchico.edu/mmem/">CSUC Mechatronic Engineering Website</a></p>
                         </div>
                         <div class="fourcol last"><img src="/images/mecha.jpg" alt="mechatronic"/></div>
@@ -179,13 +146,13 @@
                         <div class="fourcol last">
                             <button>Donate Now!</button></a>
                         </div>
-                	</div>
+                    </div>
                 </div>
 
                 <div class="twelvecol">
                 <div class="twelvecol">
                     <div class="fourcol">
-                    	<img src="/images/const_mgmt.jpg" alt="construction mgmt"/>
+                        <img src="/images/const_mgmt.jpg" alt="construction mgmt"/>
                     </div>
                     <div class="eightcol last">
                         <h3>Construction Management</h3>
@@ -201,4 +168,22 @@
         </div>
     </div>
 </template>
+
+<template name="schoolStudents">
+    <h1>students</h1>
+</template>
+
+<template name="schoolFaculty">
+    <h1>faculty</h1>
+</template>
+
+<template name="schoolCalendar">
+    <h1>calendar</h1>
+</template>
+
+<template name="schoolContact">
+    <h1>contact</h1>
+</template>
+
+
 

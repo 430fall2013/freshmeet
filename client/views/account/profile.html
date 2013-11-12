@@ -9,19 +9,7 @@
 <template name="studentProfile">
 	<div class="profile">
 		<div class="info row">
-			<div class="fourcol image">
-				<img src="{{user/profile/avatar}}" alt="student"/>
-			</div>
-			<div class="eightcol last">
-				<h3>Welcome {{user/profile/fname}} {{user/profile/lname}}!</h3>
-				<ul>
-					<li>{{user/emails/0/address}}</li>
-					<li>{{user/profile/school}}</li>
-					<li>{{user/profile/major}}, {{user/profile/gradYear}}</li>
-					<li>GPA: {{user/profile/gpa}}</li>
-					<li>Account Type: {{user/profile/type}}</li>
-				</ul>
-			</div>
+			<h3>Welcome {{user/profile/fname}} {{user/profile/lname}}!</h3>
 		</div>
 		<div class="detail row">
 			<div class="twelvecol">
