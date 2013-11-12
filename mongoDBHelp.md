@@ -26,7 +26,7 @@ HOW TO ADD LIST OF UNIVERSITES TO MONGODB:
     
     
     
-*NOTE* populating the db will cause script to run for a VERY long time when navigating to 'schools' page
+*NOTE: populating the db will cause script to run for a VERY long time when navigating to 'schools' page
 ==========
 ==========
 
