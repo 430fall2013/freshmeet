@@ -25,6 +25,8 @@ HOW TO ADD LIST OF UNIVERSITES TO MONGODB:
     mongoimport --host 127.0.0.1 --port 3002 --db meteor --collection schools --type csv --file universities.csv --fields name
     
     
+    
+*NOTE* populating the db will cause script to run for a VERY long time when navigating to 'schools' page
 ==========
 ==========
 
