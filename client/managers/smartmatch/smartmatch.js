@@ -1,10 +1,11 @@
 Template.smartmatch.helpers({
 rankedStudents: function() {
 var students = Students.find().fetch();
-//var jobs = Jobs.find().fetch();
+var jobs = Jobs.find().fetch();
 var ranked = [];
 
 // example static job info
+/*
 var jobPostings = [
 job1 = {
   desiredWeights: {
@@ -37,14 +38,17 @@ job3 = {
   skills: "java"
 }
 ];
+*/
 
-console.log(jobPostings);
+//console.log(jobs[2]); 
 
-for(var i=0; i < students.length; i++) {
-console.log(students[i]);
+for(var i=0; i < jobs.length; i++) {
+//console.log(students[i]);
 //console.log(jobs[i]);
 //ranked.push(students[i]);
 } 
+
+//console.log(jobs[2]);
 
 var skillsPer = function(student, job) {
   var matchCount = 0;
@@ -105,31 +109,27 @@ var exProjPer = function(student) {
     return (student.profile.externalExperience / 40);
 };
 
+//console.log(calculate(students[1], jobPostings[1]));
+//console.log(jobs[6].desiredWeights);
+
+
 var calcPercent = function(student, job) {
   return ((job.desiredWeights.gpaWeight * gpaPer(student))
-  + (job.desiredWeights.classLevelWeight * classLevelPer(student.profile.gradYear)
+  + (job.desiredWeights.classLevelWeight * classLevelPer(student.profile.gradYear))
   + (job.desiredWeights.exProjWeight * exProjPer(student))
   + (job.desiredWeights.workExWeight * workExPer(student)) 
-  + (job.desiredWeights.skillsWeight * skillsPer(student, job))));
-};
-
-
-/*
-var calcPercent = function(student, job) {
-  return ((job.desiredWeights.gpaWeight * student.results.gpaRes)
-  + (job.desiredWeights.classLevelWeight * student.results.classLevelRes)
-  + (job.desiredWeights.exProjWeight * student.results.exProjRes)
-  + (job.desiredWeights.workExWeight * student.results.workExRes)
   + (job.desiredWeights.skillsWeight * skillsPer(student, job)));
 };
-*/
+
 
 for (var i = 0; i < students.length; i++) {
-  for (var j = 0; j < jobPostings.length; j++) {
-  ranked.push("||" + students[i].profile.fname + " -> job " + j  + ": " + ((calcPercent(students[i], jobPostings[j]))*100).toFixed(2) + "%");
-  //console.log(calcPercent(students[i], jobPostings[j]));
+  for (var j = 0; j < jobs.length; j++) {
+  ranked.push("||" + students[i].profile.fname + " -> job " + j  + ": " + ((calcPercent(students[i], jobs[j]))*100).toFixed(2) + "%");
+  console.log(calcPercent(students[i], jobs[j]));
   };
 };
+
+//console.log(calcPercent(students[0], jobPostings[0]));
   
 
 /*
