@@ -2,6 +2,16 @@
 	<div class="twelvecol">
 		<h1 align="center" style="color:orange">{{profile/fname}} {{profile/lname}}!</h1>
 
+		<h1>Recieved Messages</h1>
+		{{#each recievedMessages}}
+			{{title}}
+		{{/each}}
+
+		<h1>Sent Messages</h1>
+		{{#each sentMessages}}
+			{{title}}
+		{{/each}}
+
 		{{{accountTypeDashboard}}}
 		
 	</div>

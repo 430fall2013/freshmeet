@@ -21,6 +21,16 @@ Template.profile.helpers({
 		}
 	}
 });
+Template.profile.events({
+	'click .send-msg': function(e) {
+		e.preventDefault();
+		var senderId = Meteor.user()._id;
+		var recieverId = this._id;
+		var title = "test";
+		var msg = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur laborum perferendis mollitia quaerat a! Itaque, animi, consectetur, deleniti, incidunt id repellendus aliquam at minus dolor numquam iure eius impedit quisquam.";
+		Meteor.call('sendMessage', senderId, recieverId, title, msg);
+	}
+});
 
 Template.studentProfile.helpers({
 	detailSection: function(user) {
@@ -67,9 +77,6 @@ Template.studentProfile.events({
 		//sets value of current section to button text
 		Session.set('currentDetailSection', $(e.target).text());
 	},
-	'click .edit-profile': function() {
-		
-	}
 });
 
 Template.studentProfile.rendered = function() {

@@ -25,3 +25,15 @@ Meteor.publish('jobs', function() {
 Meteor.publish('schools', function() {
 	return Schools.find();
 });
+
+Meteor.publish('messages', function() {
+	return Messages.find();
+});
+
+Meteor.publish('recievedMessages', function(reciever) {
+	return Messages.find({reciever: reciever});
+});
+
+Meteor.publish('sentMessages', function(sender) {
+	return Messages.find({sender: sender});
+});

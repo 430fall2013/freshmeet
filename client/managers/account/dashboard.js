@@ -10,6 +10,12 @@ Template.dashboard.helpers({
 		else if (type == 'Faculty') {
 			return Template.facultyDashboard();
 		}
+	},
+	recievedMessages: function() {
+		return Messages.find({recieverId: this._id});
+	},
+	sentMessages: function() {
+		return Messages.find({senderId: this._id});
 	}
 });
 

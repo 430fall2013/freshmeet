@@ -5,3 +5,6 @@ studentsHandle = Meteor.subscribe('students');
 schoolsHandle = Meteor.subscribe('schools');
 facultyHandle = Meteor.subscribe('faculty');
 employersHandle = Meteor.subscribe('employers');
+messagesHandle = Meteor.subscribe('messages');
+recMsgHandle = Meteor.subscribe('recievedMessages');
+sentMsgHandle = Meteor.subscribe('sentMessages');
