@@ -27,7 +27,7 @@ Template.profile.events({
 		var senderId = Meteor.user()._id;
 		var recieverId = this._id;
 		var title = "test";
-		var msg = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur laborum perferendis mollitia quaerat a! Itaque, animi, consectetur, deleniti, incidunt id repellendus aliquam at minus dolor numquam iure eius impedit quisquam.";
+		var msg = "message";
 		Meteor.call('sendMessage', senderId, recieverId, title, msg);
 	}
 });

@@ -3,14 +3,23 @@
 		<h1 align="center" style="color:orange">{{profile/fname}} {{profile/lname}}!</h1>
 
 		<h1>Recieved Messages</h1>
-		{{#each recievedMessages}}
-			{{title}}
-		{{/each}}
+		<table>
+			{{#each recievedMessages}}
+				<tr>
+					<td>{{senderId}}</td>
+					<td>{{recieverId}}</td>
+					<td>{{title}}</td>
+					<td>{{message}}</td>
+				</tr>
+			{{/each}}
+		</table>
 
 		<h1>Sent Messages</h1>
-		{{#each sentMessages}}
-			{{title}}
-		{{/each}}
+		<table>
+			{{#each sentMessages}}
+				{{title}}
+			{{/each}}
+		</table>
 
 		{{{accountTypeDashboard}}}
 		
