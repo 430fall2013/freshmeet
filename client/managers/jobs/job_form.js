@@ -10,15 +10,16 @@ Template.jobForm.events({
 
 		var job = {
 			employer: user.profile.fname + user.profile.lname,
+			company: user.profile.company,
 			title: title,
 			description: description,
-      desiredWeights: {
-        gpaWeight: (Number($('#GPAweight').val()) * 0.1),
-        classLevelWeight: (Number($('#classweight').val()) * 0.1),
-        exProjWeight: (Number($('#exProjweight').val()) * 0.1),
-        workExWeight: (Number($('#workExweight').val()) * 0.1),
-        skillsWeight: (Number($('#skillsweight').val()) * 0.1)
-      }, 
+	      	desiredWeights: {
+		        gpaWeight: (Number($('#GPAweight').val()) * 0.1),
+		        classLevelWeight: (Number($('#classweight').val()) * 0.1),
+		        exProjWeight: (Number($('#exProjweight').val()) * 0.1),
+		        workExWeight: (Number($('#workExweight').val()) * 0.1),
+		        skillsWeight: (Number($('#skillsweight').val()) * 0.1)
+	      	},
 			recruiterID: Meteor.user()._id
 		}
 

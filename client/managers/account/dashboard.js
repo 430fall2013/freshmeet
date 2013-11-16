@@ -19,8 +19,6 @@ Template.dashboard.helpers({
 	}
 });
 
-
-
 Template.jobList.helpers({
 	populateJobsList: function() {
 		return Jobs.find({recruiterID: Meteor.user()._id});
