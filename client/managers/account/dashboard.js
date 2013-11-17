@@ -10,12 +10,24 @@ Template.dashboard.helpers({
 		else if (type == 'Faculty') {
 			return Template.facultyDashboard();
 		}
-	},
+	}
+});
+Template.studentDashboard.helpers({
 	recievedMessages: function() {
-		return Messages.find({recieverId: this._id});
+		var id = Router._current.params._id;
+		return Messages.find({recieverId: id});
 	},
 	sentMessages: function() {
-		return Messages.find({senderId: this._id});
+		var id = Router._current.params._id;
+		return Messages.find({senderId: id});
+	},
+	sender: function() {
+		console.log(this);
+		var sender = Meteor.users.findOne(this.senderId);
+		return sender.profile.fname + ' ' + sender.profile.lname;
+	},
+	topJobs: function() {
+		return Jobs.find();
 	}
 });
 

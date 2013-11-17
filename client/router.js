@@ -71,5 +71,6 @@ Router.map(function() {
 		data: function() {return Meteor.users.findOne(this.params._id);},
 		waitOn: function() {return usersHandle;}
 	});
+	this.route('messageForm');
 	this.route('smartmatch');
 });

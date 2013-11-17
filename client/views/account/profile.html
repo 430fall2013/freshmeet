@@ -3,7 +3,7 @@
 		<a href="{{pathFor 'edit' _id=_id}}">Edit</a>
 	{{/if}}
 
-	<a class="send-msg" href="#">Send Message</a>
+	<a class="send-msg" href="{{pathFor 'messageForm'}}?reciever={{this/_id}}">Send Message</a>
 	
 	{{{profileType}}}
 </template>

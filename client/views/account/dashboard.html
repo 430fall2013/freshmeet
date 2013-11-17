@@ -2,25 +2,6 @@
 	<div class="twelvecol">
 		<h1 align="center" style="color:orange">{{profile/fname}} {{profile/lname}}!</h1>
 
-		<h1>Recieved Messages</h1>
-		<table>
-			{{#each recievedMessages}}
-				<tr>
-					<td>{{senderId}}</td>
-					<td>{{recieverId}}</td>
-					<td>{{title}}</td>
-					<td>{{message}}</td>
-				</tr>
-			{{/each}}
-		</table>
-
-		<h1>Sent Messages</h1>
-		<table>
-			{{#each sentMessages}}
-				{{title}}
-			{{/each}}
-		</table>
-
 		{{{accountTypeDashboard}}}
 		
 	</div>
@@ -29,27 +10,53 @@
 <template name="studentDashboard">
 	<div class="twelvecol">
 		<div class="twelvecol">
-			<div class="fourcol">
-				<h1>JOB MATCH</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, debitis commodi totam nulla unde veritatis eius quo adipisci itaque facilis labore nostrum nesciunt animi nihil provident libero vel iure recusandae.</p>
+			<div class="dashboard-section twocol">
+				<h3>Top Jobs</h3>
+				{{#each topJobs}}
+					<div class="job">
+						<img src="/images/placeholder.jpg"/>
+						{{title}}
+					</div>
+				{{/each}}
 			</div>
-			<div class="eightcol last">
-			    <div class="twelvecol">
-			        <h4>Recieved Messages</h4>
-					
-
-					<h4>Sent Messages</h4>
+		    <div class="dashboard-section tencol last">
+        		<h1>Recieved Messages</h1>
+				<div class="messages twelvecol">
+					<div class="message">
+					<div class="threecol">Title:</div>
+					<div class="sixcol">Message:</div>
+					<div class="threecol last">From:</div>
+					</div>
+					{{#each recievedMessages}}
+						<div class="message">
+							<div class="threecol">{{title}}</div>
+							<div class="sixcol">{{message}}</div>
+							<div class="threecol last">{{sender}}</div>
+						</div>
+					{{/each}}
 				</div>
-			    <div class="twelvecol">
-			        <h1>Job Tracker</h1>
-			        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, debitis commodi totam nulla unde veritatis eius quo adipisci itaque facilis labore nostrum nesciunt animi nihil provident libero vel iure recusandae.</p>
-			    </div>
+				<h1>Sent Messages</h1>
+				<div class="messages twelvecol">
+					<div class="message">
+					<div class="threecol">Title:</div>
+					<div class="sixcol">Message:</div>
+					<div class="threecol last">From:</div>
+				</div>
+				{{#each sentMessages}}
+					<div class="message">
+						<div class="threecol">{{title}}</div>
+						<div class="sixcol">{{message}}</div>
+						<div class="threecol last">{{sender}}</div>
+					</div>
+				{{/each}}
+				</div>
 			</div>
-			<div class="twelvecol">
+			<div class="twocol"></div>
+			<div class="dashboard-section tencol last">
 				<h1>Companies You are Following</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, debitis commodi totam nulla unde veritatis eius quo adipisci itaque facilis labore nostrum nesciunt animi nihil provident libero vel iure recusandae.</p>
 			</div>
-			<div class="twelvecol">
+			<div class="dashboard-section twelvecol">
 				<h1>Upcoming Events</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, debitis commodi totam nulla unde veritatis eius quo adipisci itaque facilis labore nostrum nesciunt animi nihil provident libero vel iure recusandae.</p>
 			</div>

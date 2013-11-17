@@ -9,7 +9,7 @@ Template.jobForm.events({
 		var description = $('#description').val();
 
 		var job = {
-			employer: user.profile.fname + user.profile.lname,
+			employer: user.profile.fname + ' ' + user.profile.lname,
 			company: user.profile.company,
 			title: title,
 			description: description,
