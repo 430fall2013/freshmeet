@@ -15,15 +15,17 @@ Template.dashboard.helpers({
 Template.studentDashboard.helpers({
 	recievedMessages: function() {
 		var id = Router._current.params._id;
-		return Messages.find({recieverId: id});
+		var user = Meteor.users.findOne(id);
+		return Messages.find({reciever: user});
 	},
 	sentMessages: function() {
 		var id = Router._current.params._id;
-		return Messages.find({senderId: id});
+		var user = Meteor.users.findOne(id);
+		return Messages.find({sender: user});
 	},
 	sender: function() {
 		console.log(this);
-		var sender = Meteor.users.findOne(this.senderId);
+		var sender = Meteor.users.findOne(this.sender);
 		return sender.profile.fname + ' ' + sender.profile.lname;
 	},
 	topJobs: function() {

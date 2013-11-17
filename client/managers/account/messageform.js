@@ -10,7 +10,7 @@ Template.messageForm.events({
 		var id = Router._current.params.reciever;
 		var user = Meteor.users.findOne(id);
 		var title = $('.title').val();
-		var message = $('.message').text();
+		var message = $('.message').val();
 		Meteor.call('sendMessage', Meteor.user(), user, title, message);
 		Router.go('dashboard', {_id: Meteor.user()._id});
 	}

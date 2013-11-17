@@ -1,8 +1,23 @@
+Template.company.helpers({
+	following: function() {
+		var user = Meteor.user();
+
+		if (user && _.where(user.following, {_id: this._id}).length > 0)
+			return true;
+		else
+			return false;
+	}
+});
 Template.company.events({
 	'click .follow': function(e) {
 		e.preventDefault();
 		Meteor.call('addFollower', this);
 		$(e.target).text('Unfollow');
+	},
+	'click .unfollow': function(e) {
+		e.preventDefault();
+		Meteor.call('removeFollower', this);
+		$(e.target).text('Follow');
 	}
 });
 Template.companyDetails.helpers({
