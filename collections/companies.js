@@ -7,6 +7,9 @@ Meteor.methods({
 	//this does not work... :(
 	joinExistingCompany: function(company, user) {
 		if(user.profile.type == "Employer")
-			return Schools.upsert(school, {$addToSet: {recruiter: user}});
+			return Company.upsert(company, {$addToSet: {recruiter: user}});
+	},
+	addJobToCompany: function(job, company) {
+		return Companies.upsert(company, {$addToSet: {jobsList: job}});
 	}
 });

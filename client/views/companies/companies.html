@@ -1,5 +1,5 @@
 <template name="companies">
-	<h3>Schools</h3>
+	<h3>Companies</h3>
 	<div class="twelvecol company-listings">
 		{{#each this}}
 			{{> company}}
@@ -43,10 +43,20 @@
 
 <template name="companyEmployers">
 	<h1>list of employers... </h1>
+    <ul>
+        {{#each employerMembers}}
+            <li><a href="{{pathFor 'profile' _id=_id}}">{{profile/fname}} {{profile/lname}}</a></li>
+        {{/each}}
+    </ul>
 </template>
 
 <template name="companyJobs">
     <h1>list of jobs</h1>
+    <ul>
+        {{#each jobsList}}
+            <li><a href="{{pathFor 'companyDetails' _id=companyID}}">{{title}}</a></li>
+        {{/each}}
+    </ul>
 </template>
 
 <template name="companyInternships">

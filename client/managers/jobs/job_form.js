@@ -7,6 +7,7 @@ Template.jobForm.events({
 		var user = Meteor.user();
 		var title = $('#title').val();
 		var description = $('#description').val();
+		var company = Companies.findOne({name: user.profile.company});
 
 		var job = {
 			employer: user.profile.fname + user.profile.lname,
@@ -24,6 +25,7 @@ Template.jobForm.events({
 		}
 
 		Meteor.call('newJobPosting', job);
+		Meteor.call('addJobToCompany', job, company);
 		Router.go('jobs');
 	}	
 });

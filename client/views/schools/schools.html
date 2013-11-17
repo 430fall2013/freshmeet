@@ -171,10 +171,21 @@
 
 <template name="schoolStudents">
     <h1>students</h1>
+    <ul>
+        {{#each studentMembers}}
+            <li><a href="{{pathFor 'profile' _id=_id}}">{{profile/fname}} {{profile/lname}}</a></li>
+        {{/each}}
+    </ul>
 </template>
 
 <template name="schoolFaculty">
     <h1>faculty</h1>
+    {{name}}
+    <u1>
+        {{#each facultyMembers}}
+            <li><a href="{{pathFor 'profile' _id=_id}}">{{profile/fname}} {{profile/lname}}</a></li>
+        {{/each}}
+    </ul>
 </template>
 
 <template name="schoolCalendar">
