@@ -1,9 +1,9 @@
 <template name="profile">
 	{{#if ownsProfile}}
-		<a href="{{pathFor 'edit' _id=_id}}">Edit</a>
+		<a href="{{pathFor 'edit' _id=_id}}">Edit</a> -
 	{{/if}}
 
-	<a class="send-msg" href="#">Send Message</a>
+	<a class="send-msg" href="{{pathFor 'messageForm'}}?reciever={{this/_id}}">Send Message</a>
 	
 	{{{profileType}}}
 </template>
@@ -11,7 +11,18 @@
 <template name="studentProfile">
 	<div class="profile">
 		<div class="info row">
-			<h3>Welcome {{user/profile/fname}} {{user/profile/lname}}!</h3>
+			<div class="fourcol image">
+				<img src="{{user/profile/avatar}}"/>
+			</div>
+			<div class="eightcol last">
+                <h3>Welcome {{user/profile/fname}} {{user/profile/lname}}!</h3>
+                <ul>
+                        <li>{{user/emails/0/address}}</li>
+                        <li>California State University, Chico</li>
+                        <li>Computer Science, May 2016</li>
+                        <li>Account Type: {{user/profile/type}}</li>
+                </ul>
+	        </div>
 		</div>
 		<div class="detail row">
 			<div class="twelvecol">

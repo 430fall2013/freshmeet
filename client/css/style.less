@@ -25,15 +25,6 @@ a {
 a:hover {
 	color:@orange;
 }
-table {
-	border:1px solid @grey;
-}
-td {
-	border:1px solid @grey;
-}
-tr {
-	border:1px solid @grey;
-}
 input {
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
@@ -160,6 +151,22 @@ li {
 				}
 			}
 		}
+		.dashboard-section {
+			border:5px solid @grey;
+			box-sizing:border-box;
+			-moz-box-sing:border-box;
+			padding:10px;
+			margin-top:10px;
+			margin-bottom:10px;
+		}
+		.followers {
+			.follower {
+				text-align:center;
+				display:inline-block;
+				width:96px;
+				overflow:hidden;
+			}
+		}
 		.edit-fields {
 			textarea {width:99%;height:65px;}
 		}
@@ -173,6 +180,9 @@ li {
 				box-sizing:border-box;
 				-moz-box-sizing:border-box;
 			}
+		}
+		.job {
+			border-bottom:3px solid @grey;
 		}
 		.company-listings {
 			.company {
@@ -227,6 +237,12 @@ li {
 				display:inline-block;
 				box-sizing:border-box;
 				-moz-box-sizing:border-box;
+			}
+		}
+		.messages {
+			.message {
+				height:25px;	
+				border-bottom:3px solid @grey;
 			}
 		}
 	}

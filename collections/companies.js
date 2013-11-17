@@ -12,4 +12,5 @@ Meteor.methods({
 	addJobToCompany: function(job, company) {
 		return Companies.upsert(company, {$addToSet: {jobsList: job}});
 	}
+
 });

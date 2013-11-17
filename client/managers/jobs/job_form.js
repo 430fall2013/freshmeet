@@ -10,7 +10,7 @@ Template.jobForm.events({
 		var company = Companies.findOne({name: user.profile.company});
 
 		var job = {
-			employer: user.profile.fname + user.profile.lname,
+			employer: user.profile.fname + ' ' + user.profile.lname,
 			company: user.profile.company,
 			title: title,
 			description: description,

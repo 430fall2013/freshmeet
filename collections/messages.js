@@ -5,8 +5,8 @@ SentMessages = new Meteor.Collection('sentMessages');
 Meteor.methods({
 	sendMessage: function(sender, reciever, title, msg) {
 		return Messages.insert({
-			senderId: sender, 
-			recieverId: reciever, 
+			sender: sender, 
+			reciever: reciever, 
 			title: title, 
 			message: msg
 		});	
