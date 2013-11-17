@@ -1,3 +1,10 @@
+Template.company.events({
+	'click .follow': function(e) {
+		e.preventDefault();
+		Meteor.call('addFollower', this);
+		$(e.target).text('Unfollow');
+	}
+});
 Template.companyDetails.helpers({
 	detailSection: function(company) {
 		section = Session.get('currentDetailSection');

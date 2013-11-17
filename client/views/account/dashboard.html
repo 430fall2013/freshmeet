@@ -54,7 +54,14 @@
 			<div class="twocol"></div>
 			<div class="dashboard-section tencol last">
 				<h1>Companies You are Following</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, debitis commodi totam nulla unde veritatis eius quo adipisci itaque facilis labore nostrum nesciunt animi nihil provident libero vel iure recusandae.</p>
+				<div class="followers">
+					{{#each following}}
+						<div class="follower">
+							<img src="/images/placeholder.jpg">
+							{{name}}
+						</div>
+					{{/each}}
+				</div>
 			</div>
 			<div class="dashboard-section twelvecol">
 				<h1>Upcoming Events</h1>

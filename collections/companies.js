@@ -8,5 +8,9 @@ Meteor.methods({
 	joinExistingCompany: function(company, user) {
 		if(user.profile.type == "Employer")
 			return Schools.upsert(school, {$addToSet: {recruiter: user}});
+	},
+	addFollower: function(follower) {
+		var user = Meteor.user();
+		return Meteor.users.upsert(user, {$addToSet: {following: follower}});
 	}
 });

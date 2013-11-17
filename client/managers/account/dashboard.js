@@ -28,6 +28,9 @@ Template.studentDashboard.helpers({
 	},
 	topJobs: function() {
 		return Jobs.find();
+	},
+	following: function() {
+		return Meteor.user().following;
 	}
 });
 

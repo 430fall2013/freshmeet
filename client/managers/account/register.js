@@ -130,7 +130,8 @@ Template.registerForm.events({
 					contactEmail: 'Add a contact email!',
 					phone: 'Add a phone number!',
 					address: 'Add an address!',
-					website:'Add a website!'
+					website:'Add a website!',
+					following: []
 				}
 			}, function (error) {
 				if (error) {
