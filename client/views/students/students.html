@@ -12,5 +12,8 @@
 		<img src="{{profile/avatar}}"/>
 		<p><a href="{{pathFor 'profile' _id=_id}}">{{profile/fname}} {{profile/lname}}</a></p>
 		<p>{{profile/school}}</p>
+		{{#if isEmployer}}
+			<a href="#" class="give-business-card">Give Business Card</a>
+		{{/if}}
 	</div>
 </template>

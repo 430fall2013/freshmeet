@@ -56,3 +56,15 @@ Template.schoolDetails.events({
 		Session.set('currentDetailSection', $(e.target).text());
 	}
 });
+Template.schools.helpers({
+	schoolsLoading: function() {
+		return !schoolsHandle.ready();
+	}
+});
+window.onscroll = function(e) {
+	if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+		if (Schools.find().count() >= schoolsHandle.loaded()) {
+			schoolsHandle.loadNextPage();
+		}
+	}
+};
