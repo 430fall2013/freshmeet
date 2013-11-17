@@ -48,10 +48,25 @@ Template.schoolDetails.rendered = function() {
 	}
 };
 
+Template.schoolStudents.helpers ({
+	studentMembers: function() {
+		var id = Router._current.params._id;
+		var school = Schools.findOne(id);
+		return school.studentMembers;
+	}
+});
+
+Template.schoolFaculty.helpers ({
+	facultyMembers: function() {
+		var id = Router._current.params._id;
+		var school = Schools.findOne(id);
+		return school.facultyMembers;
+	}
+});
+
 Template.schoolDetails.events({
 	'click .detail-nav li a': function(e) {
 		e.preventDefault();
-
 		//sets value of current section to button text
 		Session.set('currentDetailSection', $(e.target).text());
 	}

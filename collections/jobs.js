@@ -9,7 +9,7 @@ Meteor.methods({
 		// 	throwError('You\'ve already applied!');
 		// }
 		// else {
-			return Jobs.upsert(job, {$addToSet: {applicants: user}});
+		return Jobs.upsert(job, {$addToSet: {applicants: user}});
 		// }
 	}	
 });

@@ -78,3 +78,25 @@ Template.companyDetails.events({
 		Session.set('currentDetailSection', $(e.target).text());
 	}
 });
+
+Template.companyEmployers.helpers ({
+	employerMembers: function() {
+		var id = Router._current.params._id;
+		var company = Companies.findOne(id);
+		console.log(company);
+		return company.employerMembers;
+	}
+});
+
+Template.companyJobs.helpers ({
+	jobsList: function() {
+		var id = Router._current.params._id;
+		var company = Companies.findOne(id);
+		console.log(company);
+		return company.jobsList;
+	},
+	companyID: function() {
+		var company = this.company;//Router._current.params._id;
+		return Companies.findOne({name: company})._id;
+	}
+});
