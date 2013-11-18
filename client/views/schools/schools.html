@@ -5,6 +5,9 @@
 			{{> school}}
 		{{/each}}
 	</div>
+    {{#if schoolsLoading}}
+        {{> spinner}}
+    {{/if}}
 </template>
 
 <template name="school">

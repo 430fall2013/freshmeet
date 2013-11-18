@@ -1,6 +1,8 @@
 {
   "packages": {
     "iron-router": {},
-    "jquery-ui": {}
+    "jquery-ui": {},
+    "paginated-subscription": {},
+    "spin": {}
   }
 }

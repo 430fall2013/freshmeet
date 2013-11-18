@@ -22,8 +22,8 @@ Meteor.publish('jobs', function() {
 	return Jobs.find();
 });
 
-Meteor.publish('schools', function() {
-	return Schools.find();
+Meteor.publish('schools', function(limit) {
+	return Schools.find({}, {limit: limit});
 });
 
 Meteor.publish('messages', function() {

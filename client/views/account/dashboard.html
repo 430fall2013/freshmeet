@@ -67,6 +67,18 @@
 				<h1>Upcoming Events</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, debitis commodi totam nulla unde veritatis eius quo adipisci itaque facilis labore nostrum nesciunt animi nihil provident libero vel iure recusandae.</p>
 			</div>
+			<div class="dashboard-section twelvecol">
+				<h1>Virtual Business Cards</h1>
+				<div class="cards">
+					{{#each businessCards}}
+						<div class="card">
+							<img src="/images/placeholder.jpg">
+							<p><a href="{{pathFor 'profile' _id=_id}}">{{profile/fname}} {{profile/lname}}</a></p>
+							<p><a href="{{pathFor 'companyDetails' _id=companyId}}">{{profile/company}}</a></p>
+						</div>
+					{{/each}}
+				</div>
+			</div>
 	    </div>
 	</div>
 </template>

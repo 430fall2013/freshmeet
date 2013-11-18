@@ -23,16 +23,28 @@ Template.studentDashboard.helpers({
 		var user = Meteor.users.findOne(id);
 		return Messages.find({sender: user});
 	},
+	businessCards: function() {
+		var id = Router._current.params._id;
+		var user = Meteor.users.findOne(id);
+		return user.cards;
+	},
 	sender: function() {
 		console.log(this);
 		var sender = Meteor.users.findOne(this.sender);
 		return sender.profile.fname + ' ' + sender.profile.lname;
 	},
 	topJobs: function() {
+		var jobs = Jobs.find();
+		var topJobs = [];
+		var user = Meteor.user();
+
 		return Jobs.find();
 	},
 	following: function() {
 		return Meteor.user().following;
+	},
+	companyId: function() {
+		return Companies.findOne({name: this.profile.company})._id;
 	}
 });
 
