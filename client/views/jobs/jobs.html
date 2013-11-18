@@ -13,7 +13,7 @@
 
 <template name="job">
 	<div class="job">
-		Title: <a href="{{pathFor 'job' _id=this/_id}}">{{title}}</a>
+		Title: <a href="{{pathFor 'jobDetails' _id=this/_id}}">{{title}}</a>
 		<p>Description: {{description}}</p>
 		<p>Employer: {{employer}}</p>
 
@@ -28,4 +28,30 @@
 			<a href="#" class="apply">Apply for this job</a>
 		{{/if}}
 	</div>
+</template>
+
+<template name="jobDetails">
+	<h1 align="center">{{company}}: {{title}}</h1>
+	<p><strong>Employer:</strong> {{employer}}</p>
+	<p><strong>Description:</strong></p>
+	<p>{{description}}</p>
+
+
+	{{> extraJobsList}}
+</template>
+
+<template name="extraJobsList">
+	<div class="twelvecol jobs-section">
+		<p align="center"><strong>More jobs from this recruiter</strong></p>
+		<div class="followers">
+			{{#each moreJobs}}
+				<div class="follower">
+					<img src="/images/placeholder.jpg">
+					{{title}}
+				</div>
+			{{/each}}
+		</div>
+	</div>
+
+
 </template>

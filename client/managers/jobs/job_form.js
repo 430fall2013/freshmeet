@@ -26,6 +26,7 @@ Template.jobForm.events({
 
 		Meteor.call('newJobPosting', job);
 		Meteor.call('addJobToCompany', job, company);
+		Meteor.call('addJobToEmployer', job, user);
 		Router.go('jobs');
 	}	
 });

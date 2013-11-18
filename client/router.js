@@ -9,7 +9,6 @@ Router.map(function() {
 	this.route('register');
 	this.route('login');
 	this.route('contact');
-	this.route('jobDetails');
 	this.route('students', {
 		path: '/students',
 		data: function() {return Students.find();},
@@ -35,11 +34,6 @@ Router.map(function() {
 		data: function() {return Companies.findOne(this.params._id);},
 		waitOn: function() {return companiesHandle;}
 	});
-	this.route('jobs', {
-		path: '/jobs',
-		data: function() {return Jobs.find();},
-		waitOn: function() {return jobsHandle;}
-	});
 	this.route('schools', {
 		path: '/schools',
 		data: function() {return Schools.find();},
@@ -50,7 +44,12 @@ Router.map(function() {
 		data: function() {return Schools.findOne(this.params._id);},
 		waitOn: function() {return schoolsHandle;}
 	});
-	this.route('job', {
+	this.route('jobs', {
+		path: '/jobs',
+		data: function() {return Jobs.find();},
+		waitOn: function() {return jobsHandle;}
+	});
+	this.route('jobDetails', {
 		path: '/jobs/:_id',
 		data: function() {return Jobs.findOne(this.params._id);},
 		waitOn: function() {return jobsHandle;}
