@@ -1,4 +1,3 @@
-
 	-client                   #Code that will run on the client
 		-css                  #CSS
 		-managers             #javascript code that goes with the templates
@@ -86,4 +85,6 @@
 		What will we call users who sign up to manage the schools?
 	*/
 
+
+test commit from nomi33
 
